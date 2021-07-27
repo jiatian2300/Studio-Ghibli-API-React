@@ -1,4 +1,194 @@
 body {
     background: #2f789b;
     font-family: "Montserrat", sans-serif;
+    background-image: url("../../images/home_bg.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto 40%;
+}
+
+.hero {
+    position: relative;
+    padding: 2em 0 1em;
+
+    .hero_img {
+        position: relative;
+        text-align: left;
+        img {
+            width: 50%;
+            max-width: 200px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            z-index: -1;
+            height: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            // background: $light-yellow;
+            position: absolute;
+            top: 0.5em;
+        }
+    }
+
+    h1 {
+        position: absolute;
+        right: 4vw;
+        bottom: 0.3em;
+    }
+
+    .studio_txt {
+        right: 0;
+        bottom: 1.3em;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-top: 3em;
+        display: grid;
+        grid-template-columns: 3fr 2.5fr 3fr;
+        .hero_img {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            &::after {
+                height: 100%;
+                margin-left: 3em;
+            }
+        }
+
+        h1 {
+            position: relative;
+            top: 17vw;
+        }
+
+        .studio_txt {
+            right: 0;
+            top: 0;
+            justify-self: end;
+            margin-right: -0.6em;
+        }
+
+        .ghibli_txt {
+            margin-left: 0em;
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        padding-top: 4em;
+    }
+
+    @include for-desktop-up {
+        h1 {
+            top: 1.5em;
+        }
+        .ghibli_txt {
+            margin-left: 0.15em;
+        }
+    }
+}
+
+.intro {
+    padding: 10em 0 12em;
+    position: relative;
+
+    @include for-tablet-portrait-up {
+        margin-top: -10vw;
+    }
+
+    h4 {
+        padding: 11vw 0em;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 6px;
+            width: 30%;
+            left: 35%;
+            bottom: 6vw;
+            background: $light-blue;
+        }
+
+        @include for-tablet-portrait-up {
+            padding: 14vw 14vw 10vw;
+        }
+    }
+
+    .cloud {
+        position: absolute;
+    }
+    .cloud_one {
+        left: 0;
+        margin-left: -50%;
+        margin-top: -8em;
+        opacity: 0.8;
+    }
+    .cloud_two {
+        right: 0;
+        margin-right: -50%;
+        bottom: 3.5em;
+        opacity: 0.6;
+    }
+    .kiki {
+        position: absolute;
+        height: calc(6em + 14vw);
+        left: 0;
+        margin-left: -2em;
+        bottom: 0;
+    }
+}
+
+main {
+    padding: 2em 0 1em;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        position: relative;
+    }
+
+    img {
+        height: 2em;
+        margin: 0 0.4em;
+    }
+
+    p {
+        background: rgba($color: white, $alpha: 0.7);
+        padding: 2em;
+        margin: 1.2em 0 0.8em;
+        border-radius: 30px;
+
+        @include for-tablet-portrait-up {
+            padding: 3em;
+        }
+    }
+
+    .about,
+    .ghibli {
+        padding-top: 2em;
+    }
+
+    .about {
+        h2 {
+            margin-right: 2.6rem;
+            @include yellow-circle(0, 1.6em);
+        }
+    }
+
+    .ghibli {
+        h2 {
+            margin-left: 2.6rem;
+            @include yellow-circle(1.5em, null);
+        }
+    }
 }

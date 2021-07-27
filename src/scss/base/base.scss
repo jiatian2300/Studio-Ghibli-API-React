@@ -1,10 +1,25 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: auto;
+}
+body {
+    overflow: hidden;
+}
+
 .App {
-    width: 85%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }

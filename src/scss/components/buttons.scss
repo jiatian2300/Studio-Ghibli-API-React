@@ -1,5 +1,28 @@
 .outline_btn {
-    border: white 2px solid;
-    padding: 0.4em 0.7em;
-    border-radius: 5px;
+    @include btn-border-drawing(white, $yellow, 2px, bottom, right);
+    padding: 0.7em;
+    font-size: 0.9rem;
+}
+
+.underline_btn {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        bottom: 0;
+        left: 25%;
+        top: 1.5em;
+        background-color: $yellow;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    &:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
 }

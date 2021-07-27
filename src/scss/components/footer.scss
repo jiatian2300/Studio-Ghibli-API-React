@@ -1,0 +1,26 @@
+footer {
+    padding: 2em 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: white;
+    }
+
+    .outline_btn {
+        border-radius: 10px;
+    }
+
+    .up {
+        background: none;
+        border: white 2px solid;
+        border-radius: 50%;
+        color: white;
+        padding: 0;
+        padding-bottom: 4px;
+        height: 2em;
+        width: 2em;
+    }
+}
