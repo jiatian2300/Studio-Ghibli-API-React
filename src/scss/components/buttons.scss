@@ -2,6 +2,13 @@
     @include btn-border-drawing(white, $yellow, 2px, bottom, right);
     padding: 0.7em;
     font-size: 0.9rem;
+
+    @include for-tablet-portrait-up {
+        font-size: 1rem;
+    }
+    @include for-tablet-landscape-up {
+        font-size: 1.1rem;
+    }
 }
 
 .underline_btn {

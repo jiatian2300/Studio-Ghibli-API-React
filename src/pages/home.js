@@ -4,7 +4,6 @@ import cloud from "../images/cloud.png";
 import kiki from "../images/kiki.png";
 import soot from "../images/soot.png";
 import fire from "../images/fire.png";
-import "../scss/pages/home.scss";
 
 function Home() {
     return (

@@ -1,3 +1,16 @@
+body,
+button {
+    @include for-tablet-portrait-up {
+        font-size: 18px;
+    }
+    @include for-tablet-landscape-up {
+        font-size: 20px;
+    }
+    @include for-desktop-up {
+        // font-size: 10rem;
+    }
+}
+
 h1 {
     font-family: "Londrina Outline", cursive;
     color: white;
@@ -32,7 +45,7 @@ h2 {
         font-size: 3rem;
     }
     @include for-tablet-landscape-up {
-        // font-size: 7.5rem;
+        font-size: 4rem;
     }
     @include for-desktop-up {
         // font-size: 10rem;
