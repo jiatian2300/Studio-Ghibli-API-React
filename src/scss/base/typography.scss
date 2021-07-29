@@ -24,13 +24,13 @@ h1 {
     }
 
     @include for-tablet-portrait-up {
-        font-size: 5.5rem;
+        font-size: 6rem;
     }
     @include for-tablet-landscape-up {
-        font-size: 7.5rem;
+        font-size: 7rem;
     }
     @include for-desktop-up {
-        font-size: 10rem;
+        font-size: 9rem;
     }
 }
 
@@ -75,7 +75,7 @@ h4 {
     font-size: 1.2rem;
 
     @include for-small-tablet-portrait-up {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     @include for-tablet-portrait-up {
@@ -85,7 +85,7 @@ h4 {
         // font-size: 7.5rem;
     }
     @include for-desktop-up {
-        // font-size: 10rem;
+        font-size: 1.7rem;
     }
 }
 
@@ -95,18 +95,11 @@ p {
     line-height: 1.5;
     font-size: 0.9rem;
 
-    @include for-small-tablet-portrait-up {
+    @include for-tablet-portrait-up {
         font-size: 1.1rem;
     }
-
-    @include for-tablet-portrait-up {
-        font-size: 1.2rem;
-    }
-    @include for-tablet-landscape-up {
-        // font-size: 7.5rem;
-    }
     @include for-desktop-up {
-        // font-size: 10rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -120,24 +113,58 @@ a {
     font-weight: 900;
     font-size: 2rem;
     margin: 0;
+
+    @include for-tablet-portrait-up {
+        font-size: 2.5rem;
+    }
+    @include for-desktop-up {
+        font-size: 3.3rem;
+    }
 }
 
 .jap-title {
     font-weight: 900;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
+
+    @include for-tablet-portrait-up {
+        font-size: 1.3rem;
+    }
+    @include for-desktop-up {
+        font-size: 1.6rem;
+    }
 }
 
 .year {
     font-weight: 400;
     font-size: 1.1rem;
     padding-bottom: 1.5em;
+
+    @include for-tablet-portrait-up {
+        font-size: 1.2rem;
+    }
+    @include for-desktop-up {
+        font-size: 1.5rem;
+    }
 }
 
 .staff {
     font-weight: 400;
+
+    @include for-desktop-up {
+        font-size: 1.2rem;
+    }
+
     span {
         font-weight: 600;
         font-size: 1.1rem;
+
+        @include for-tablet-portrait-up {
+            font-size: 1.2rem;
+        }
+
+        @include for-desktop-up {
+            font-size: 1.4rem;
+        }
     }
 }

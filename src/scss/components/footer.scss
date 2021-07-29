@@ -5,6 +5,7 @@ footer {
 footer .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     gap: 2em;
     padding: 2.5em 0;
@@ -12,12 +13,14 @@ footer .container {
 
     a {
         color: white;
+        width: fit-content;
     }
 
     .outline_btn {
         border-radius: 10px;
         border: 2px solid white;
         order: 1;
+        width: 80%;
     }
 
     .up {
@@ -40,16 +43,16 @@ footer .container {
             border-radius: 50%;
 
             display: block;
-            padding: 0;
+            padding: 1px 0 0 1px;
             height: 1.6em;
             width: 1.65em;
         }
 
         &:hover {
-            color: var(--nav-accent);
+            color: var(--nav_accent);
             span {
-                border: var(--nav-accent) 1.5px solid;
-                color: var(--nav-accent);
+                border: var(--nav_accent) 1.5px solid;
+                color: var(--nav_accent);
             }
         }
 
@@ -57,7 +60,7 @@ footer .container {
     }
 }
 
-@include for-small-tablet-portrait-up {
+@include for-tablet-portrait-up {
     footer {
         background: none;
     }
@@ -78,6 +81,7 @@ footer .container {
             border-radius: 0;
             border: none;
             order: 0;
+            width: fit-content;
         }
     }
 }

@@ -62,7 +62,49 @@
 }
 
 // details
-.basic_btn {
+
+.basic_btn_dark,
+.basic_btn_light {
+    padding: 0.8em 0 0.9em;
+    width: 12em;
+    border-radius: 5px;
+
     font-family: "Montserrat", sans-serif;
-    padding: 0.5em 0.5em;
+    font-size: 0.8rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    span {
+        display: inline-block;
+        transition: all 0.2s ease-out;
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 0.95rem;
+        width: 12.5em;
+    }
+
+    @include for-desktop-up {
+        font-size: 1.1rem;
+    }
+
+    &:hover {
+        filter: brightness(1.2);
+        span {
+            transform: rotate(15deg) scale(1.2) translateX(1px) translateY(-1px);
+        }
+    }
+}
+
+.basic_btn_light {
+    background: white;
+    color: $pri-dark;
+    border: $pri-dark 1.5px solid;
+}
+
+.basic_btn_dark {
+    background: $pri-dark;
+    color: white;
+    border: none;
 }

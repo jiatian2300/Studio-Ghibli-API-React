@@ -4,6 +4,7 @@ import cloud from "../images/cloud.png";
 import kiki from "../images/kiki.png";
 import soot from "../images/soot.png";
 import fire from "../images/fire.png";
+import scarecrow from "../images/scarecrow.png";
 
 function Home() {
     return (
@@ -52,6 +53,7 @@ function Home() {
                         new wind through the anime industry".
                     </p>
                 </div>
+                <img src={scarecrow} alt="scarecrow" className="scarecrow" />
             </main>
         </div>
     );

@@ -1,17 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Movie() {
-    let poster = require("../../posters/kiki.jpg");
+function Movie({ movie }) {
+    // let poster = require(`../../posters/Whisper of the Heart.jpg`);
+    let poster = require(`../../posters/${movie.title}.jpg`);
 
     return (
         <div className="movie">
             <img className="poster" src={poster.default} alt="Poster" />
             <div className="text">
-                <h3 className="title">Kiki's Delivery Service</h3>
-                <p>(1989)</p>
-                <a href="#" className="rounded_btn">
+                <h3 className="title">{movie.title}</h3>
+                <p>({movie.release_date})</p>
+                <Link className="rounded_btn" to={`/all-movies/${movie.id}`}>
                     More Info ➞
-                </a>
+                </Link>
             </div>
         </div>
     );

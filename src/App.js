@@ -21,7 +21,8 @@ function App() {
             <Navbar />
             <Switch>
                 <Route path="/" exact component={Home}></Route>
-                <Route path="/all-movies" component={AllMovies}></Route>
+                <Route path="/all-movies" exact component={AllMovies}></Route>
+                <Route path="/all-movies/:id" component={Details}></Route>
                 <Route path="/detail" component={Details}></Route>
                 <Route path="/watch-list" component={WatchList}></Route>
                 <Route path="/quiz" component={Quiz}></Route>

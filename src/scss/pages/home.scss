@@ -5,6 +5,11 @@
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: auto 40%;
+    background-position-y: bottom 15%;
+
+    @include for-tablet-portrait-up {
+        background-position-y: bottom;
+    }
 
     @include for-tablet-landscape-up {
         background-size: auto 45%;
@@ -74,7 +79,7 @@
             justify-content: center;
 
             img {
-                width: 100%;
+                width: 90%;
                 max-width: 300px;
             }
 
@@ -178,6 +183,8 @@
 
 main {
     padding: 2em 0 1em;
+    position: relative;
+
     header {
         display: flex;
         justify-content: center;
@@ -225,6 +232,10 @@ main {
         }
     }
 
+    .scarecrow {
+        display: none;
+    }
+
     @include for-tablet-landscape-up {
         .about,
         .ghibli {
@@ -234,6 +245,15 @@ main {
 
         .ghibli {
             flex-direction: row-reverse;
+        }
+
+        .scarecrow {
+            position: absolute;
+            display: block;
+            width: 6em;
+            height: 18em;
+            bottom: -2em;
+            left: -3.5em;
         }
     }
 }

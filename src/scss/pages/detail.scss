@@ -1,19 +1,53 @@
 .detail {
     background: white;
-    .container {
-        padding: 2em 0;
+}
+
+.wrapper {
+    padding: 4em 0 3em;
+}
+
+.details_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster_wrapper {
+    position: relative;
+    .poster {
+        position: relative;
+        width: 16em;
+        height: 22.8em;
+        z-index: 2;
+        border: 4px white solid;
+    }
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        width: 16em;
+        height: 22.8em;
+    }
+
+    &::before {
+        border: 3px $yellow solid;
+        left: -0.8em;
+        bottom: 0.8em;
+    }
+
+    &::after {
+        background: $pri-dark;
+        right: -0.8em;
+        top: 0.8em;
     }
 }
 
-.poster {
-    width: 16em;
-}
-
 .content {
-    padding: 2em 0;
+    padding: 3em 0;
 
     .buttons {
-        padding-top: 1.3em;
+        padding: 1.5em 0;
         display: flex;
         justify-content: center;
         gap: 0.8em;
@@ -21,5 +55,76 @@
         .watched {
             display: none;
         }
+    }
+}
+
+.description {
+    padding: 1.8em;
+    background: $light-yellow;
+    color: $pri-dark;
+    position: relative;
+    line-height: 1.2;
+
+    .kodama {
+        display: none;
+    }
+}
+
+@include for-small-tablet-portrait-up {
+    .description {
+        padding: 2.5em;
+
+        .kodama {
+            position: absolute;
+            display: block;
+            width: 3.5em;
+            left: -1.5em;
+            bottom: -1em;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .details_wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5em;
+    }
+
+    .poster_wrapper {
+        margin-left: 0.6em;
+    }
+
+    .description {
+        padding: 3em;
+        margin-top: 5em;
+        line-height: 1.5;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background: $pri-dark;
+
+            width: 8px;
+            height: 4.5em;
+        }
+
+        &::before {
+            right: 0;
+            top: -1.5em;
+        }
+
+        &::after {
+            right: 0.8em;
+            top: 0;
+        }
+    }
+}
+
+@include for-desktop-up {
+    .detail .wrapper {
+        padding: 3em 0;
     }
 }

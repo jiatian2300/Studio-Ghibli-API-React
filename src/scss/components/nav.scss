@@ -60,6 +60,8 @@ nav {
         position: absolute;
         right: 10%;
         top: 4.5em;
+        z-index: 12;
+        box-shadow: rgba(0, 0, 0, 0.1) 5px 0 4px -2px;
     }
 
     .nav_links {
@@ -67,8 +69,9 @@ nav {
         background: white;
         padding: 3em 0;
         width: 300px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-            rgba(27, 22, 22, 0.05) 0px 4px 6px -2px;
+        // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        //     rgba(27, 22, 22, 0.05) 0px 4px 6px -2px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         z-index: 10;
 
         display: flex;
