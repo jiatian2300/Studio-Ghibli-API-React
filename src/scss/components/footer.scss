@@ -1,9 +1,14 @@
 footer {
-    padding: 2em 0;
-
+    background-color: $pri-dark;
+    margin-top: 1em;
+}
+footer .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    gap: 2em;
+    padding: 2.5em 0;
+    position: relative;
 
     a {
         color: white;
@@ -11,16 +16,68 @@ footer {
 
     .outline_btn {
         border-radius: 10px;
+        border: 2px solid white;
+        order: 1;
     }
 
     .up {
         background: none;
-        border: white 2px solid;
-        border-radius: 50%;
-        color: white;
-        padding: 0;
-        padding-bottom: 4px;
-        height: 2em;
-        width: 2em;
+        color: $pri-dark;
+        border: none;
+        cursor: pointer;
+
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        align-self: flex-end;
+
+        position: absolute;
+        top: -3em;
+
+        span {
+            border: $pri-dark 1.5px solid;
+            color: $pri-dark;
+            border-radius: 50%;
+
+            display: block;
+            padding: 0;
+            height: 1.6em;
+            width: 1.65em;
+        }
+
+        &:hover {
+            color: var(--nav-accent);
+            span {
+                border: var(--nav-accent) 1.5px solid;
+                color: var(--nav-accent);
+            }
+        }
+
+        display: none; // Only display on the all-movies page
+    }
+}
+
+@include for-small-tablet-portrait-up {
+    footer {
+        background: none;
+    }
+
+    footer .container {
+        padding: 1.5em 0;
+        background: none;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: var(--nav_color);
+        }
+
+        .outline_btn {
+            border-radius: 0;
+            border: none;
+            order: 0;
+        }
     }
 }

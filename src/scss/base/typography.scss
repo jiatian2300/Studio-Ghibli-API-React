@@ -4,10 +4,10 @@ button {
         font-size: 18px;
     }
     @include for-tablet-landscape-up {
-        font-size: 20px;
+        // font-size: 20px;
     }
     @include for-desktop-up {
-        // font-size: 10rem;
+        font-size: 19px;
     }
 }
 
@@ -40,6 +40,7 @@ h2 {
     font-size: 2.5rem;
     text-decoration: underline;
     letter-spacing: 2px;
+    z-index: 1;
 
     @include for-tablet-portrait-up {
         font-size: 3rem;
@@ -49,6 +50,20 @@ h2 {
     }
     @include for-desktop-up {
         // font-size: 10rem;
+    }
+}
+
+h3 {
+    color: var(--movie);
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+
+    @include for-tablet-portrait-up {
+        font-size: 1.15rem;
+    }
+    @include for-tablet-landscape-up {
+        font-size: 1.2rem;
     }
 }
 
@@ -78,18 +93,51 @@ p {
     color: $pri-dark;
     font-weight: 600;
     line-height: 1.5;
+    font-size: 0.9rem;
 
     @include for-small-tablet-portrait-up {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     @include for-tablet-portrait-up {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     @include for-tablet-landscape-up {
         // font-size: 7.5rem;
     }
     @include for-desktop-up {
         // font-size: 10rem;
+    }
+}
+
+a {
+    font-size: 1rem;
+}
+
+// Details Page
+
+.movie-title {
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.jap-title {
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.year {
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-bottom: 1.5em;
+}
+
+.staff {
+    font-weight: 400;
+    span {
+        font-weight: 600;
+        font-size: 1.1rem;
     }
 }

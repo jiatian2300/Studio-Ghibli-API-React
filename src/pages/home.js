@@ -7,7 +7,7 @@ import fire from "../images/fire.png";
 
 function Home() {
     return (
-        <div>
+        <div className="container">
             <section className="hero">
                 <h1 className="studio_txt">Studio</h1>
                 <div className="hero_img">

@@ -76,15 +76,15 @@
     &::before {
         $h-side: if($horizontal == "left", "right", "left");
 
-        border-#{$vertical}-width: $width;
-        border-#{$h-side}-width: $width;
+        border-#{$vertical}-width: calc(#{$width} + 1px);
+        border-#{$h-side}-width: calc(#{$width} + 1px);
     }
 
     &::after {
         $v-side: if($vertical == "top", "bottom", "top");
 
-        border-#{$v-side}-width: $width;
-        border-#{$horizontal}-width: $width;
+        border-#{$v-side}-width: calc(#{$width} + 1px);
+        border-#{$horizontal}-width: calc(#{$width} + 1px);
     }
 
     &:hover {
