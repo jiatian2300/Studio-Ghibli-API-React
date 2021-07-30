@@ -1,4 +1,4 @@
-.App {
+.home {
     background: #2f789b;
     font-family: "Montserrat", sans-serif;
     background-image: url("../../images/home_bg.png");
@@ -83,7 +83,7 @@
 
             img {
                 width: 90%;
-                max-width: 300px;
+                max-width: 260px;
             }
 
             &::after {
@@ -176,6 +176,7 @@
     .kiki {
         position: absolute;
         height: calc(6em + 14vw);
+        max-height: 230px;
         left: 0;
         margin-left: -2em;
         bottom: 0;
@@ -242,6 +243,8 @@ main {
     }
 
     @include for-tablet-landscape-up {
+        padding: 2em 0;
+
         .about,
         .ghibli {
             display: flex;

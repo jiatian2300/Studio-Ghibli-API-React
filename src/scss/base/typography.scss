@@ -1,5 +1,6 @@
 body,
 button {
+    font-family: "Montserrat", sans-serif;
     @include for-tablet-portrait-up {
         font-size: 18px;
     }
@@ -54,7 +55,7 @@ h2 {
 }
 
 h3 {
-    color: var(--movie);
+    color: var(--theme);
     font-weight: 900;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -115,10 +116,10 @@ a {
     margin: 0;
 
     @include for-tablet-portrait-up {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
     @include for-desktop-up {
-        font-size: 3.3rem;
+        font-size: 2.8rem;
     }
 }
 

@@ -22,22 +22,27 @@ function Navbar() {
         <nav className={`container ${openNav ? "nav_visible" : null}`}>
             <div className="triangle"></div>
             <div className="nav_links">
-                <Link className="underline_btn" to="/all-movies">
+                <Link
+                    className="underline_btn"
+                    to="/all-movies"
+                    onClick={close_nav}
+                >
                     All Movies
                 </Link>
-                <Link className="underline_btn" to="/quiz">
+                <Link className="underline_btn" to="/quiz" onClick={close_nav}>
                     Quizzes
                 </Link>
                 <Link
                     className={btnDark ? "outline_btn_dark" : "outline_btn"}
                     to="/watch-list"
+                    onClick={close_nav}
                 >
                     My Watch List
                 </Link>
                 <img className="jiji" src={jiji} alt="Black Cat" />
                 <img className="chu" src={chu_totoro} alt="chu totoro" />
             </div>
-            <Link to="/" className="logo_wrapper">
+            <Link to="/" className="logo_wrapper" onClick={close_nav}>
                 <Logo className="logo" />
             </Link>
             <button className="nav_toggle" onClick={toggle_nav}>
@@ -48,6 +53,10 @@ function Navbar() {
 
     function toggle_nav() {
         setOpenNav(!openNav);
+    }
+
+    function close_nav() {
+        setOpenNav(false);
     }
 }
 

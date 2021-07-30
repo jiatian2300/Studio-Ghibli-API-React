@@ -10,16 +10,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1em;
 }
 
 .poster_wrapper {
     position: relative;
     .poster {
         position: relative;
-        width: 16em;
-        height: 22.8em;
+        width: 15em;
+        height: 22em;
         z-index: 2;
-        border: 3px white solid;
+        border: 2px white solid;
         background: white;
     }
 
@@ -27,8 +28,8 @@
     &::before {
         content: "";
         position: absolute;
-        width: 16em;
-        height: 22.8em;
+        width: 15em;
+        height: 22em;
     }
 
     &::before {
@@ -125,7 +126,7 @@
 }
 
 @include for-desktop-up {
-    .detail .wrapper {
-        padding: 3em 0;
+    .wrapper {
+        padding: 2em 0;
     }
 }

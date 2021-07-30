@@ -1,0 +1,51 @@
+:root {
+    background: white;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.notFound {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    color: $pri-dark;
+    text-align: center;
+    font-family: "Londrina Solid", cursive;
+    font-size: 2rem;
+
+    img {
+        width: 2em;
+        margin-bottom: 0.3em;
+    }
+
+    .shadow {
+        position: absolute;
+        margin-top: 0.4em;
+        margin-left: 0.3em;
+        height: 1.2em;
+        width: 3.2em;
+        background: radial-gradient(
+            rgba($color: #000000, $alpha: 0.3),
+            white 70%
+        );
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 3rem;
+
+        img {
+            width: 3em;
+        }
+    }
+}

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import kodama from "../images/kodama.png";
+// import { ErrorBoundary } from "react-error-boundary";
 
 function Details({ match }) {
     const [movie, setMovie] = useState({});
     const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -11,12 +14,20 @@ function Details({ match }) {
                 `https://ghibliapi.herokuapp.com/films/${match.params.id}`
             );
             const item = await data.json();
-            setPoster(require(`../posters/${item.title}.jpg`));
+            try {
+                setPoster(require(`../posters/${item.title}.jpg`));
+            } catch (e) {
+                setError(true);
+            }
             setMovie(item);
         };
 
         fetchMovie();
-    }, []);
+    }, [match]);
+
+    if (error) {
+        return <Redirect to="/page-not-found" />;
+    }
 
     return (
         <div className="container wrapper">

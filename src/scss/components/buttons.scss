@@ -44,8 +44,8 @@
 // movie
 
 .rounded_btn {
-    border: 1.5px var(--movie) solid;
-    color: var(--movie);
+    border: 1.5px var(--theme) solid;
+    color: var(--theme);
     border-radius: 10px;
     padding: 0.6em 0.8em;
     margin-top: 0.5em;
@@ -56,7 +56,7 @@
 
     &:hover {
         transform: scale(1.05) translateY(2px);
-        filter: hue-rotate(-20deg) brightness(3);
+        filter: hue-rotate(-20deg);
         box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
     }
 }
@@ -86,7 +86,7 @@
     }
 
     @include for-desktop-up {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     &:hover {

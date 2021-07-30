@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Switch, Route } from "react-router-dom";
+import { useLocation, Switch, Route, Redirect } from "react-router-dom";
 import "./App.scss";
 //Pages
 import Home from "./pages/home";
@@ -7,6 +7,7 @@ import AllMovies from "./pages/all-movies";
 import Details from "./pages/details";
 import WatchList from "./pages/watchlist";
 import Quiz from "./pages/quiz";
+import notFound from "./pages/notFound";
 //Components
 import Navbar from "./pages/components/navbar";
 import Footer from "./pages/components/footer";
@@ -20,12 +21,13 @@ function App() {
         <div className={`App ${location}`}>
             <Navbar />
             <Switch>
-                <Route path="/" exact component={Home}></Route>
+                <Route path="/home" exact component={Home}></Route>
+                <Redirect from="/" exact to="/home" />
                 <Route path="/all-movies" exact component={AllMovies}></Route>
                 <Route path="/all-movies/:id" component={Details}></Route>
-                <Route path="/detail" component={Details}></Route>
                 <Route path="/watch-list" component={WatchList}></Route>
                 <Route path="/quiz" component={Quiz}></Route>
+                <Route component={notFound}></Route>
             </Switch>
             <Footer />
         </div>
