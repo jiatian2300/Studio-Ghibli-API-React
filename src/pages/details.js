@@ -3,28 +3,20 @@ import kodama from "../images/kodama.png";
 
 function Details({ match }) {
     const [movie, setMovie] = useState({});
-
-    let poster = require("../posters/Spirited Away.jpg");
+    const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
 
     useEffect(() => {
+        const fetchMovie = async () => {
+            const data = await fetch(
+                `https://ghibliapi.herokuapp.com/films/${match.params.id}`
+            );
+            const item = await data.json();
+            setPoster(require(`../posters/${item.title}.jpg`));
+            setMovie(item);
+        };
+
         fetchMovie();
     }, []);
-
-    const fetchMovie = async () => {
-        const data = await fetch(
-            `https://ghibliapi.herokuapp.com/films/${match.params.id}`
-        );
-        const item = await data.json();
-        // poster = await require(`../posters/${item.title}.jpg`);
-        setMovie(item);
-        console.log(item.title);
-    };
-
-    console.log("here");
-
-    // let poster = require("../posters/Spirited Away.jpg");
-
-    console.log("after");
 
     return (
         <div className="container wrapper">
@@ -34,7 +26,7 @@ function Details({ match }) {
                 </div>
                 <div className="content">
                     <p className="movie-title">{movie.title}</p>
-                    <p className="jap-title">{match.original_title}</p>
+                    <p className="jap-title">{movie.original_title}</p>
                     <p className="year">({movie.release_date})</p>
                     <p className="staff">
                         Director: <span className="name">{movie.director}</span>

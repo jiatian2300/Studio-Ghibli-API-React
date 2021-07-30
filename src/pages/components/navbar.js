@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../images/logo.svg";
+import { Link } from "react-router-dom";
 import chu_totoro from "../../images/chu_totoro.png";
 import jiji from "../../images/jiji.png";
 
@@ -21,24 +22,24 @@ function Navbar() {
         <nav className={`container ${openNav ? "nav_visible" : null}`}>
             <div className="triangle"></div>
             <div className="nav_links">
-                <a className="underline_btn" href="./all-movies">
+                <Link className="underline_btn" to="/all-movies">
                     All Movies
-                </a>
-                <a className="underline_btn" href="./quiz">
+                </Link>
+                <Link className="underline_btn" to="/quiz">
                     Quizzes
-                </a>
-                <a
+                </Link>
+                <Link
                     className={btnDark ? "outline_btn_dark" : "outline_btn"}
-                    href="./watch-list"
+                    to="/watch-list"
                 >
                     My Watch List
-                </a>
+                </Link>
                 <img className="jiji" src={jiji} alt="Black Cat" />
                 <img className="chu" src={chu_totoro} alt="chu totoro" />
             </div>
-            <a href="../" className="logo_wrapper">
+            <Link to="/" className="logo_wrapper">
                 <Logo className="logo" />
-            </a>
+            </Link>
             <button className="nav_toggle" onClick={toggle_nav}>
                 <div className="hamburger"></div>
             </button>

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Movie({ movie }) {
-    // let poster = require(`../../posters/Whisper of the Heart.jpg`);
     let poster = require(`../../posters/${movie.title}.jpg`);
 
     return (

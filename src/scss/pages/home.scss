@@ -14,6 +14,9 @@
     @include for-tablet-landscape-up {
         background-size: auto 45%;
     }
+    @include for-desktop-up {
+        background-size: auto 50%;
+    }
 }
 
 /* ==================
@@ -155,11 +158,13 @@
 
     .cloud {
         position: absolute;
+        width: 70vw;
+        max-width: 900px;
     }
     .cloud_one {
         left: 0;
         margin-left: -50%;
-        margin-top: -8em;
+        margin-top: -7em;
         opacity: 0.8;
     }
     .cloud_two {

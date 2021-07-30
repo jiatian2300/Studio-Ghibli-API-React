@@ -5,15 +5,15 @@ function AllMovies() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
+        const fetchItems = async () => {
+            const data = await fetch("https://ghibliapi.herokuapp.com/films");
+            const items = await data.json();
+            console.log(items);
+            setMovies(items);
+        };
+
         fetchItems();
     }, []);
-
-    const fetchItems = async () => {
-        const data = await fetch("https://ghibliapi.herokuapp.com/films");
-        const items = await data.json();
-        console.log(items);
-        setMovies(items);
-    };
 
     return (
         <div className="container">

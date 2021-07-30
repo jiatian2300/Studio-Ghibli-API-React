@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
         <footer>
             <div className="container">
-                <a className="outline_btn" href="./watch-list">
+                <Link className="outline_btn" to="/watch-list">
                     🌟 My Watch List
-                </a>
-                <a className="underline_btn" href="./">
+                </Link>
+                <Link className="underline_btn" to="/">
                     Home 🏠
-                </a>
-                <a className="underline_btn" href="./all-movies">
+                </Link>
+                <Link className="underline_btn" to="/all-movies">
                     All Movies 🎬
-                </a>
-                <a className="underline_btn" href="./quiz">
+                </Link>
+                <Link className="underline_btn" to="/quiz">
                     Quizzes 📝
-                </a>
+                </Link>
                 <button className="up" onClick={scrollToTop}>
                     <u>Back to Top</u>
                     <span>🠕</span>
