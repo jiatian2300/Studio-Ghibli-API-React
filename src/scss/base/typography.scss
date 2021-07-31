@@ -169,3 +169,14 @@ a {
         }
     }
 }
+
+// watch list
+.list-title {
+    font-family: "Londrina Solid", cursive;
+    font-size: 2.5rem;
+    color: $light-green;
+
+    span {
+        font-family: "Londrina Outline", cursive;
+    }
+}

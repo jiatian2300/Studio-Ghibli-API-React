@@ -1,12 +1,54 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import kodama from "../images/kodama.png";
-// import { ErrorBoundary } from "react-error-boundary";
 
 function Details({ match }) {
+    const [toWatch, setToWatch] = useState([]);
+    const [watched, setWatched] = useState([]);
+
     const [movie, setMovie] = useState({});
     const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
     const [error, setError] = useState(false);
+
+    /* ===========================================
+        Handle save and load from local storage
+    =============================================*/
+
+    useEffect(() => {
+        function getLocalStorage() {
+            if (localStorage.getItem("toWatch") === null) {
+                localStorage.setItem("toWatch", JSON.stringify([]));
+            } else {
+                let local = JSON.parse(localStorage.getItem("toWatch"));
+                setToWatch(local);
+            }
+
+            if (localStorage.getItem("watched") === null) {
+                localStorage.setItem("watched", JSON.stringify([]));
+            } else {
+                let local = JSON.parse(localStorage.getItem("watched"));
+                setWatched(local);
+            }
+        }
+        getLocalStorage();
+    }, []);
+
+    useEffect(() => {
+        function saveToLocalStorage() {
+            localStorage.setItem("toWatch", JSON.stringify(toWatch));
+            localStorage.setItem("watched", JSON.stringify(watched));
+        }
+
+        saveToLocalStorage();
+    }, [toWatch, watched]);
+
+    const addToWatch = () => {
+        setToWatch([...toWatch, movie.title]);
+    };
+
+    const addWatched = () => {
+        setWatched([...watched, movie.title]);
+    };
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -25,6 +67,7 @@ function Details({ match }) {
         fetchMovie();
     }, [match]);
 
+    // if trying to load a page with a invalid id, redirect
     if (error) {
         return <Redirect to="/page-not-found" />;
     }
@@ -46,10 +89,16 @@ function Details({ match }) {
                         Producer: <span className="name">{movie.producer}</span>
                     </p>
                     <div className="buttons">
-                        <button className="want basic_btn_dark">
+                        <button
+                            className="want basic_btn_dark"
+                            onClick={addToWatch}
+                        >
                             Want to Watch <span>🍿</span>
                         </button>
-                        <button className="add basic_btn_light">
+                        <button
+                            className="add basic_btn_light"
+                            onClick={addWatched}
+                        >
                             Add to Watched <span>🎬</span>
                         </button>
                         <button className="watched basic_btn_light">

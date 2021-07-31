@@ -1,0 +1,133 @@
+.watch-list {
+    background: linear-gradient($v-light-yellow 43%, $light-green 0%);
+    @include for-tablet-portrait-up {
+        background: linear-gradient($v-light-yellow 50%, $light-green 0%);
+    }
+}
+
+// center lists
+.watch-list-wrapper {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 2em;
+
+    img {
+        width: 3em;
+    }
+}
+
+.to-watch,
+.watched {
+    margin: 3em 0;
+}
+
+.watched {
+    margin-top: 6em;
+
+    .list-title {
+        color: $v-light-yellow;
+    }
+}
+
+.toters {
+    display: none;
+}
+
+@include for-desktop-up {
+    .watch-list {
+        background: $v-light-yellow;
+    }
+
+    .watch-list-wrapper {
+        max-width: 1200px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10em;
+    }
+
+    header {
+        flex-direction: row-reverse;
+    }
+
+    .to-watch,
+    .watched {
+        margin: 5em 0;
+    }
+
+    .watched {
+        position: relative;
+        z-index: 1;
+        &::after {
+            content: "";
+            background: $light-green;
+            position: absolute;
+            height: 130%;
+            width: 160%;
+            top: -10%;
+            left: -20%;
+            border-radius: 20px;
+            z-index: -1;
+        }
+    }
+
+    .toters {
+        position: absolute;
+        display: block;
+        width: 15em;
+        bottom: -1.5em;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+    }
+}
+
+/* ==========================
+  watchedItem & toWatchItems
+=========================== */
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    font-family: "Londrina Solid", cursive;
+
+    p {
+        font-weight: 300;
+        font-size: 1.3rem;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.watchedItem p {
+    color: white;
+}
+
+.icon {
+    padding-right: 1.5em;
+    cursor: pointer;
+}
+
+.cross {
+    cursor: pointer;
+}
+
+.tick {
+    transition: all 0.3s ease-in;
+    &:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}

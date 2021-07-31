@@ -25,7 +25,7 @@
         grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
         column-gap: 1.7em;
         row-gap: 2em;
-        padding: 2em 0 2em;
+        padding: 3em 0 2em;
     }
 }
 
@@ -33,6 +33,7 @@
     background: var(--bg);
 
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+    transition: all 0.2s ease-in-out;
 
     display: grid;
     grid-template-columns: auto 1fr;
@@ -74,12 +75,16 @@
         bottom: 0.4em;
         right: 0.5em;
     }
+
+    // &:hover {
+    //     transform: scale(1.01);
+    // }
 }
 
 .bushes {
     display: none;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
         position: absolute;
         bottom: 11vh;
         right: -7em;

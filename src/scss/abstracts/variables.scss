@@ -4,6 +4,9 @@ $pri-dark: #254d63;
 $light-yellow: rgba(#ffefb8, 0.5);
 $light-blue: rgba(#dbf6fd, 0.6);
 
+$v-light-yellow: #fffcf2;
+$light-green: #89b47b;
+
 $yellow: #ffe385;
 
 // css variables
@@ -22,13 +25,17 @@ $yellow: #ffe385;
     --nav_accent: #ffb773;
 }
 
-.movie,
-.detail {
+.movie-details {
+    --nav_color: #254d63;
+    --nav_accent: #ffe385;
+}
+
+.movie {
     --theme: #152c38;
     --bg: white;
 }
 
-// .detail {
-//     --nav_color: #254d63;
-//     --nav_accent: #ffe385;
-// }
+.watch-list {
+    --nav_color: #254d63;
+    --nav_accent: #6c8d4c;
+}

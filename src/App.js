@@ -21,10 +21,11 @@ function App() {
         <div className={`App ${location}`}>
             <Navbar />
             <Switch>
-                <Route path="/home" exact component={Home}></Route>
                 <Redirect from="/" exact to="/home" />
+                <Route path="/home" exact component={Home}></Route>
                 <Route path="/all-movies" exact component={AllMovies}></Route>
-                <Route path="/all-movies/:id" component={Details}></Route>
+                <Redirect from="/all-movies/:id" to="/movie-details/:id" />
+                <Route path="/movie-details/:id" component={Details}></Route>
                 <Route path="/watch-list" component={WatchList}></Route>
                 <Route path="/quiz" component={Quiz}></Route>
                 <Route component={notFound}></Route>
