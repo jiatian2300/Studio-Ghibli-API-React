@@ -65,9 +65,10 @@
 
 .basic_btn_dark,
 .basic_btn_light {
-    padding: 0.8em 0 0.9em;
-    width: 12em;
+    padding: 0.9em 0 1em;
+    width: 100%;
     border-radius: 5px;
+    border: $pri-dark 1.5px solid;
 
     font-family: "Montserrat", sans-serif;
     font-size: 0.8rem;
@@ -82,7 +83,7 @@
 
     @include for-tablet-portrait-up {
         font-size: 0.95rem;
-        width: 12.5em;
+        width: 15em;
     }
 
     @include for-desktop-up {
@@ -100,11 +101,9 @@
 .basic_btn_light {
     background: white;
     color: $pri-dark;
-    border: $pri-dark 1.5px solid;
 }
 
 .basic_btn_dark {
     background: $pri-dark;
     color: white;
-    border: none;
 }

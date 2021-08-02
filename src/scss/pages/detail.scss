@@ -57,12 +57,10 @@
     .buttons {
         padding: 1.5em 0;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
         gap: 0.8em;
-
-        .watched {
-            display: none;
-        }
     }
 }
 
@@ -78,6 +76,10 @@
     }
 }
 
+.none {
+    display: none;
+}
+
 @include for-small-tablet-portrait-up {
     .description {
         padding: 2.5em;
@@ -89,6 +91,12 @@
             left: -1.5em;
             bottom: -1em;
         }
+    }
+}
+
+@include for-tablet-portrait-up {
+    .content .buttons {
+        flex-direction: row;
     }
 }
 

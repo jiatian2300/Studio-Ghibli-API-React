@@ -2,53 +2,26 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import kodama from "../images/kodama.png";
 
-function Details({ match }) {
-    const [toWatch, setToWatch] = useState([]);
-    const [watched, setWatched] = useState([]);
-
+function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     const [movie, setMovie] = useState({});
     const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
     const [error, setError] = useState(false);
 
-    /* ===========================================
-        Handle save and load from local storage
-    =============================================*/
+    const [wantBtnState, setWantState] = useState("Want to Watch");
+    const [watchedState, setWatchedState] = useState(false);
 
     useEffect(() => {
-        function getLocalStorage() {
-            if (localStorage.getItem("toWatch") === null) {
-                localStorage.setItem("toWatch", JSON.stringify([]));
-            } else {
-                let local = JSON.parse(localStorage.getItem("toWatch"));
-                setToWatch(local);
-            }
-
-            if (localStorage.getItem("watched") === null) {
-                localStorage.setItem("watched", JSON.stringify([]));
-            } else {
-                let local = JSON.parse(localStorage.getItem("watched"));
-                setWatched(local);
-            }
+        if (toWatch.includes(movie.title)) {
+            setWantState("Remove from Watch");
+        } else {
+            setWantState("Want to Watch");
         }
-        getLocalStorage();
-    }, []);
-
-    useEffect(() => {
-        function saveToLocalStorage() {
-            localStorage.setItem("toWatch", JSON.stringify(toWatch));
-            localStorage.setItem("watched", JSON.stringify(watched));
+        if (watched.includes(movie.title)) {
+            setWatchedState(true);
+        } else {
+            setWatchedState(false);
         }
-
-        saveToLocalStorage();
-    }, [toWatch, watched]);
-
-    const addToWatch = () => {
-        setToWatch([...toWatch, movie.title]);
-    };
-
-    const addWatched = () => {
-        setWatched([...watched, movie.title]);
-    };
+    }, [movie, toWatch, watched]);
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -67,10 +40,31 @@ function Details({ match }) {
         fetchMovie();
     }, [match]);
 
-    // if trying to load a page with a invalid id, redirect
+    // if trying to load a page with a invalid id, a error will be thrown when
+    // trying to load the poster. Hence, need to redirect to error page
     if (error) {
         return <Redirect to="/page-not-found" />;
     }
+
+    const addToWatch = () => {
+        if (!toWatch.includes(movie.title)) {
+            setToWatch([...toWatch, movie.title]);
+        } else {
+            setToWatch(toWatch.filter((e) => e !== movie.title));
+        }
+    };
+
+    const addWatched = () => {
+        setWatched([...watched, movie.title]);
+        if (toWatch.includes(movie.title)) {
+            setToWatch(toWatch.filter((e) => e !== movie.title));
+        }
+    };
+
+    const watchAgain = () => {
+        setWatched(watched.filter((e) => e !== movie.title));
+        setToWatch([...toWatch, movie.title]);
+    };
 
     return (
         <div className="container wrapper">
@@ -90,19 +84,31 @@ function Details({ match }) {
                     </p>
                     <div className="buttons">
                         <button
-                            className="want basic_btn_dark"
+                            className={`basic_btn_dark ${
+                                watchedState ? "none" : ""
+                            }`}
                             onClick={addToWatch}
                         >
-                            Want to Watch <span>🍿</span>
+                            {wantBtnState} <span>🍿</span>
                         </button>
                         <button
-                            className="add basic_btn_light"
+                            className={`basic_btn_light ${
+                                watchedState ? "none" : ""
+                            }`}
                             onClick={addWatched}
                         >
                             Add to Watched <span>🎬</span>
                         </button>
-                        <button className="watched basic_btn_light">
+                        <p className={` ${watchedState ? "" : "none"}`}>
                             Finshed Watching ✔️
+                        </p>
+                        <button
+                            className={`basic_btn_light ${
+                                watchedState ? "" : "none"
+                            }`}
+                            onClick={watchAgain}
+                        >
+                            Watch Again 💖
                         </button>
                     </div>
                 </div>

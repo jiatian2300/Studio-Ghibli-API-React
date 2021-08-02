@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Switch, Route, Redirect } from "react-router-dom";
 import "./App.scss";
 //Pages
@@ -17,6 +17,41 @@ function App() {
     const path = useLocation().pathname;
     const location = path.split("/")[1];
 
+    /* ===========================================
+        Handle save and load from local storage
+    =============================================*/
+
+    const [toWatch, setToWatch] = useState([]);
+    const [watched, setWatched] = useState([]);
+
+    useEffect(() => {
+        function getLocalStorage() {
+            if (localStorage.getItem("toWatch") === null) {
+                localStorage.setItem("toWatch", JSON.stringify([]));
+            } else {
+                let local = JSON.parse(localStorage.getItem("toWatch"));
+                setToWatch(local);
+            }
+
+            if (localStorage.getItem("watched") === null) {
+                localStorage.setItem("watched", JSON.stringify([]));
+            } else {
+                let local = JSON.parse(localStorage.getItem("watched"));
+                setWatched(local);
+            }
+        }
+        getLocalStorage();
+    }, []);
+
+    useEffect(() => {
+        function saveToLocalStorage() {
+            localStorage.setItem("toWatch", JSON.stringify(toWatch));
+            localStorage.setItem("watched", JSON.stringify(watched));
+        }
+
+        saveToLocalStorage();
+    }, [toWatch, watched]);
+
     return (
         <div className={`App ${location}`}>
             <Navbar />
@@ -25,8 +60,26 @@ function App() {
                 <Route path="/home" exact component={Home}></Route>
                 <Route path="/all-movies" exact component={AllMovies}></Route>
                 <Redirect from="/all-movies/:id" to="/movie-details/:id" />
-                <Route path="/movie-details/:id" component={Details}></Route>
-                <Route path="/watch-list" component={WatchList}></Route>
+                <Route
+                    path="/movie-details/:id"
+                    render={({ match }) => (
+                        <Details
+                            match={match}
+                            toWatch={toWatch}
+                            setToWatch={setToWatch}
+                            watched={watched}
+                            setWatched={setWatched}
+                        ></Details>
+                    )}
+                ></Route>
+                <Route path="/watch-list">
+                    <WatchList
+                        toWatch={toWatch}
+                        setToWatch={setToWatch}
+                        watched={watched}
+                        setWatched={setWatched}
+                    ></WatchList>
+                </Route>
                 <Route path="/quiz" component={Quiz}></Route>
                 <Route component={notFound}></Route>
             </Switch>

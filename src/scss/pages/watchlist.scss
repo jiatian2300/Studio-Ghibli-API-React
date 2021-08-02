@@ -1,13 +1,10 @@
 .watch-list {
-    background: linear-gradient($v-light-yellow 43%, $light-green 0%);
-    @include for-tablet-portrait-up {
-        background: linear-gradient($v-light-yellow 50%, $light-green 0%);
-    }
+    background: linear-gradient($v-light-yellow 80%, $light-green 0%);
+    position: relative;
 }
 
 // center lists
 .watch-list-wrapper {
-    position: relative;
     max-width: 450px;
     margin: 0 auto;
 }
@@ -24,16 +21,35 @@ header {
     }
 }
 
-.to-watch,
-.watched {
+.to-watch {
     margin: 3em 0;
+
+    header {
+        margin-right: -3em;
+    }
 }
 
 .watched {
-    margin-top: 6em;
+    margin: 6em 0 1em;
+    position: relative;
+    z-index: 1;
 
-    .list-title {
-        color: $v-light-yellow;
+    header {
+        margin-left: -3em;
+        .list-title {
+            color: $v-light-yellow;
+        }
+    }
+
+    &::after {
+        content: "";
+        background: $light-green;
+        position: absolute;
+        height: 300%;
+        width: 200vw;
+        left: -50vw;
+        top: -2.5em;
+        z-index: -2;
     }
 }
 
@@ -54,36 +70,48 @@ header {
         column-gap: 10em;
     }
 
-    header {
-        flex-direction: row-reverse;
-    }
-
     .to-watch,
     .watched {
-        margin: 5em 0;
+        margin: 3.5em 0 4.5em;
+        min-height: 5em;
     }
 
     .watched {
         position: relative;
         z-index: 1;
+
         &::after {
-            content: "";
-            background: $light-green;
-            position: absolute;
-            height: 130%;
+            height: 115%;
             width: 160%;
-            top: -10%;
+            top: -7%;
             left: -20%;
             border-radius: 20px;
-            z-index: -1;
         }
+    }
+
+    header {
+        flex-direction: row-reverse;
+        margin-bottom: 0.5em;
+    }
+
+    .to-watch header {
+        margin-left: -5em;
+    }
+
+    .watched header {
+        margin-right: -5em;
+    }
+
+    .to-watch-list,
+    .watched-list {
+        z-index: 3;
     }
 
     .toters {
         position: absolute;
         display: block;
         width: 15em;
-        bottom: -1.5em;
+        bottom: 3.5em;
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 1;
@@ -109,19 +137,27 @@ header {
         display: flex;
         align-items: center;
     }
+
+    .icon {
+        cursor: pointer;
+    }
+
+    .watch_txt,
+    .rewatch_txt {
+        padding-left: 1.5em;
+    }
 }
 
 .watchedItem p {
     color: white;
 }
 
-.icon {
-    padding-right: 1.5em;
-    cursor: pointer;
-}
-
 .cross {
-    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.2);
+        color: rgb(255, 103, 103);
+    }
 }
 
 .tick {
@@ -129,5 +165,14 @@ header {
     &:hover {
         transform: scale(1.1);
         filter: brightness(1.2);
+    }
+}
+
+.rewatch {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: rotate(300deg) scale(1.2) translateY(2px);
+        color: $yellow;
     }
 }
