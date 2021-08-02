@@ -5,7 +5,9 @@ import loader from "../images/music.gif";
 
 function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     const [movie, setMovie] = useState({});
-    const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
+    const [poster, setPoster] = useState(
+        require("../images/posters/placeholder.jpg")
+    );
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
 

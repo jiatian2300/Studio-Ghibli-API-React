@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import duck from "../images/duck.png";
 import bath from "../images/bath.png";
 import tots from "../images/tots.png";
-import ToWatchItem from "./components/to-watch-item";
-import WatchedItem from "./components/watched-item";
+import ToWatchItem from "../components/to-watch-item";
+import WatchedItem from "../components/watched-item";
 
 function WatchList({ toWatch, setToWatch, watched, setWatched }) {
     return (

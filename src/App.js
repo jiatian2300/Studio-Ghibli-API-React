@@ -7,49 +7,36 @@ import AllMovies from "./pages/all-movies";
 import Details from "./pages/details";
 import WatchList from "./pages/watchlist";
 import Quiz from "./pages/quiz";
+import QuizLanding from "./pages/quiz-landing";
 import notFound from "./pages/notFound";
 //Components
-import Navbar from "./pages/components/navbar";
-import Footer from "./pages/components/footer";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+//Utils
+import {
+    getLocalToWatch,
+    getLocalWatched,
+    saveToLocalStorage,
+} from "./util/localStorage";
 
 function App() {
     // find the current pathname and add it as a class to App to render the correct background
     const path = useLocation().pathname;
     const location = path.split("/")[1];
 
-    /* ===========================================
-        Handle save and load from local storage
-    =============================================*/
-
     const [toWatch, setToWatch] = useState([]);
     const [watched, setWatched] = useState([]);
 
+    /* ===========================================
+        Handle save and load from local storage
+    =============================================*/
     useEffect(() => {
-        function getLocalStorage() {
-            if (localStorage.getItem("toWatch") === null) {
-                localStorage.setItem("toWatch", JSON.stringify([]));
-            } else {
-                let local = JSON.parse(localStorage.getItem("toWatch"));
-                setToWatch(local);
-            }
-
-            if (localStorage.getItem("watched") === null) {
-                localStorage.setItem("watched", JSON.stringify([]));
-            } else {
-                let local = JSON.parse(localStorage.getItem("watched"));
-                setWatched(local);
-            }
-        }
-        getLocalStorage();
+        setToWatch(getLocalToWatch);
+        setWatched(getLocalWatched);
     }, []);
 
     useEffect(() => {
-        function saveToLocalStorage() {
-            localStorage.setItem("toWatch", JSON.stringify(toWatch));
-            localStorage.setItem("watched", JSON.stringify(watched));
-        }
-
-        saveToLocalStorage();
+        saveToLocalStorage(toWatch, watched);
     }, [toWatch, watched]);
 
     return (
@@ -80,7 +67,8 @@ function App() {
                         setWatched={setWatched}
                     ></WatchList>
                 </Route>
-                <Route path="/quiz" component={Quiz}></Route>
+                <Route path="/quizzes" component={QuizLanding}></Route>
+                <Route path="/quiz-start" component={Quiz}></Route>
                 <Route component={notFound}></Route>
             </Switch>
             <Footer />

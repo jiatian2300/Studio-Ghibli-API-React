@@ -14,7 +14,7 @@ function Footer() {
                 <Link className="underline_btn" to="/all-movies">
                     All Movies 🎬
                 </Link>
-                <Link className="underline_btn" to="/quiz">
+                <Link className="underline_btn" to="/quizzes">
                     Quizzes 📝
                 </Link>
                 <button className="up" onClick={scrollToTop}>

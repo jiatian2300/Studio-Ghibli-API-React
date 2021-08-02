@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Movie from "./components/movie";
+import Movie from "../components/movie";
 import bush1 from "../images/bush1.png";
 import bush2 from "../images/bush2.png";
 import loader from "../images/walking.gif";

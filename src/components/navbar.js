@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../images/logo.svg";
 import { Link } from "react-router-dom";
-import chu_totoro from "../../images/chu_totoro.png";
-import jiji from "../../images/jiji.png";
+import chu_totoro from "../images/chu_totoro.png";
+import jiji from "../images/jiji.png";
 
 function Navbar() {
     const [openNav, setOpenNav] = useState(false);
@@ -29,7 +29,11 @@ function Navbar() {
                 >
                     All Movies
                 </Link>
-                <Link className="underline_btn" to="/quiz" onClick={close_nav}>
+                <Link
+                    className="underline_btn"
+                    to="/quizzes"
+                    onClick={close_nav}
+                >
                     Quizzes
                 </Link>
                 <Link
