@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import kodama from "../images/kodama.png";
+import loader from "../images/music.gif";
 
 function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     const [movie, setMovie] = useState({});
     const [poster, setPoster] = useState(require("../posters/placeholder.jpg"));
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const [wantBtnState, setWantState] = useState("Want to Watch");
     const [watchedState, setWatchedState] = useState(false);
+
+    useEffect(() => {
+        //display loader for 1s
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         if (toWatch.includes(movie.title)) {
@@ -68,7 +78,11 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
 
     return (
         <div className="container wrapper">
-            <div className="details_wrapper">
+            <div className={`loader ${loading ? "" : "hidden"}`}>
+                <img src={loader} alt="Loading..." />
+                Loading...
+            </div>
+            <div className={`details_wrapper ${loading ? "hidden" : ""}`}>
                 <div className="poster_wrapper">
                     <img className="poster" src={poster.default} alt="Poster" />
                 </div>
@@ -113,7 +127,7 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
                     </div>
                 </div>
             </div>
-            <div className="description">
+            <div className={`description ${loading ? "hidden" : ""}`}>
                 <img src={kodama} alt="kodama" className="kodama" />
                 {movie.description}
             </div>

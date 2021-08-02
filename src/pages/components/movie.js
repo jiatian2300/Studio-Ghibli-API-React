@@ -34,7 +34,7 @@ function Movie({ movie }) {
             const lum =
                 [0.299 * r, 0.587 * g, 0.114 * b].reduce((a, b) => a + b) / 255;
             if (lum > 0.7) {
-                setBg(adjustBrightness(colour, -50));
+                setBg(adjustBrightness(colour, -60));
             } else {
                 setBg(adjustBrightness(colour, 140));
             }

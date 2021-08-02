@@ -20,12 +20,26 @@
     row-gap: 1.8em;
     justify-items: center;
     align-items: center;
+    position: relative;
+    animation-name: animatebottom;
+    animation-duration: 1s;
 
     @include for-desktop-up {
         grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
         column-gap: 1.7em;
         row-gap: 2em;
         padding: 3em 0 2em;
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
     }
 }
 
@@ -102,4 +116,16 @@
             width: 17em;
         }
     }
+}
+
+.loader {
+    z-index: 1;
+    width: 8em;
+    height: 6em;
+    margin: 0 auto;
+    margin-bottom: 8em;
+}
+
+.hidden {
+    display: none;
 }

@@ -9,7 +9,7 @@
     margin: 0 auto;
 }
 
-header {
+.watch-list header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,21 +21,21 @@ header {
     }
 }
 
-.to-watch {
-    margin: 3em 0;
+.to-watch,
+.watched {
+    min-height: calc((100vh - 16em) / 2);
+}
 
-    header {
-        margin-right: -3em;
-    }
+.to-watch {
+    margin: 3em auto;
 }
 
 .watched {
-    margin: 6em 0 1em;
+    margin: 6em auto 1em;
     position: relative;
     z-index: 1;
 
     header {
-        margin-left: -3em;
         .list-title {
             color: $v-light-yellow;
         }
@@ -45,7 +45,7 @@ header {
         content: "";
         background: $light-green;
         position: absolute;
-        height: 300%;
+        height: 1000%;
         width: 200vw;
         left: -50vw;
         top: -2.5em;
@@ -89,18 +89,18 @@ header {
         }
     }
 
-    header {
+    .watch-list header {
         flex-direction: row-reverse;
         margin-bottom: 0.5em;
     }
 
-    .to-watch header {
-        margin-left: -5em;
-    }
+    // .to-watch header {
+    //     margin-left: -5em;
+    // }
 
-    .watched header {
-        margin-right: -5em;
-    }
+    // .watched header {
+    //     margin-right: -5em;
+    // }
 
     .to-watch-list,
     .watched-list {
