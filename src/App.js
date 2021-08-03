@@ -27,6 +27,8 @@ function App() {
     const [toWatch, setToWatch] = useState([]);
     const [watched, setWatched] = useState([]);
 
+    const [quizCat, setQuizCat] = useState("people");
+
     /* ===========================================
         Handle save and load from local storage
     =============================================*/
@@ -40,7 +42,7 @@ function App() {
     }, [toWatch, watched]);
 
     return (
-        <div className={`App ${location}`}>
+        <div className={`App ${location} ${quizCat}`}>
             <Navbar />
             <Switch>
                 <Redirect from="/" exact to="/home" />
@@ -67,8 +69,19 @@ function App() {
                         setWatched={setWatched}
                     ></WatchList>
                 </Route>
-                <Route path="/quizzes" component={QuizLanding}></Route>
-                <Route path="/quiz-start" component={Quiz}></Route>
+                <Route path="/quizzes">
+                    <QuizLanding setQuizCat={setQuizCat}></QuizLanding>
+                </Route>
+                <Route
+                    path="/quiz-start/:category"
+                    render={({ match }) => (
+                        <Quiz
+                            quizCat={quizCat}
+                            setQuizCat={setQuizCat}
+                            match={match}
+                        ></Quiz>
+                    )}
+                ></Route>
                 <Route component={notFound}></Route>
             </Switch>
             <Footer />

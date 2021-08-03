@@ -42,7 +42,7 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
             );
             const item = await data.json();
             try {
-                setPoster(require(`../posters/${item.title}.jpg`));
+                setPoster(require(`../images/posters/${item.title}.jpg`));
             } catch (e) {
                 setError(true);
             }
@@ -79,7 +79,7 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     };
 
     return (
-        <div className="container wrapper">
+        <div className="container details-wrapper">
             <div className={`loader ${loading ? "" : "hidden"}`}>
                 <img src={loader} alt="Loading..." />
                 Loading...

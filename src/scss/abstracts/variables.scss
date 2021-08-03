@@ -43,17 +43,58 @@ $yellow: #ffe385;
 .quizzes {
     --nav_color: #254d63;
     --nav_accent: salmon;
+}
 
-    //people
-    --btn_3d_1: #7681ff;
-    --btn_3d_1_acc: #b7bdff;
-    //locations
-    --btn_3d_2: #ff9492;
-    --btn_3d_2_acc: #ffb0ae;
-    //species
-    --btn_3d_3: #68cad7;
-    --btn_3d_3_acc: #b0e2e9;
-    //vehicles
-    --btn_3d_4: #f8ac72;
-    --btn_3d_4_acc: #fcd9be;
+.quiz-start {
+    --nav_color: #254d63;
+    --nav_accent: white;
+}
+
+.quiz-start,
+.quizzes {
+    //category colours
+    --people_1: #7681ff;
+    --people_1_light: #b3b9ff;
+    --people_1_bg: #d6d9fc;
+    --people_1_acc: #ffeadc;
+
+    --location_2: #ff9492;
+    --location_2_light: #ffc8c6;
+    --location_2_bg: #ffded7;
+    --location_2_acc: #ecffff;
+
+    --species_3: #68cad7;
+    --species_3_light: #b0e2e9;
+    --species_3_bg: #d3e9ec;
+    --species_3_acc: #dff7da;
+
+    --vehicle_4: #f8ac72;
+    --vehicle_4_light: #fcd9be;
+    --vehicle_4_bg: #ffebdc;
+    --vehicle_4_acc: #f5caca;
+}
+
+.people {
+    --background: var(--people_1_bg);
+    --quiz_acc: var(--people_1_acc);
+    --quiz_light: var(--people_1_light);
+    --quiz_dark: var(--people_1);
+}
+.locations {
+    --background: var(--location_2_bg);
+    --quiz_acc: var(--location_2_acc);
+    --quiz_light: var(--location_2_light);
+    --quiz_dark: var(--location_2);
+}
+.species {
+    --background: var(--species_3_bg);
+    --quiz_acc: var(--species_3_acc);
+    --quiz_light: var(--species_3_light);
+    --quiz_dark: var(--species_3);
+}
+.vehicles {
+    --background: var(--vehicle_4_bg);
+    --quiz_acc: var(--vehicle_4_acc);
+    --quiz_light: var(--vehicle_4_light);
+    --quiz_dark: var(--vehicle_4);
 }

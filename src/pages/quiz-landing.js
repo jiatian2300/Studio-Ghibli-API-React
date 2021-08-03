@@ -1,26 +1,51 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import train from "../images/train.gif";
 
-function QuizLanding() {
+function QuizLanding({ setQuizCat }) {
     return (
-        <div className="container wrapper">
+        <div className="container landing-wrapper">
             <h1>TRIVIA QUIZ</h1>
             <div className="gif-wrapper">
                 <img src={train} alt="train arriving at station" />
             </div>
             <div className="categories">
-                <a href="./quiz-start" className="btn-3d people-1">
+                <Link
+                    to="./quiz-start/people"
+                    className="btn-3d people-1"
+                    onClick={() => {
+                        setQuizCat("people");
+                    }}
+                >
                     People
-                </a>
-                <a href="./quiz-start" className="btn-3d location-2">
+                </Link>
+                <Link
+                    to="./quiz-start/locations"
+                    className="btn-3d location-2"
+                    onClick={() => {
+                        setQuizCat("locations");
+                    }}
+                >
                     Locations
-                </a>
-                <a href="./quiz-start" className="btn-3d species-3">
+                </Link>
+                <Link
+                    to="./quiz-start/species"
+                    className="btn-3d species-3"
+                    onClick={() => {
+                        setQuizCat("species");
+                    }}
+                >
                     Species
-                </a>
-                <a href="./quiz-start" className="btn-3d vehicle-4">
+                </Link>
+                <Link
+                    to="./quiz-start/vehicles"
+                    className="btn-3d vehicle-4"
+                    onClick={() => {
+                        setQuizCat("vehicle");
+                    }}
+                >
                     Vehicle
-                </a>
+                </Link>
             </div>
         </div>
     );

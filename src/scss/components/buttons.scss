@@ -117,6 +117,45 @@
     font-size: 1.1rem;
 
     height: 3em;
+    width: 80%;
+    max-width: 400px;
     line-height: 2.4em;
     border-radius: 50px;
+    padding: 0 2em;
+}
+
+.quit_btn {
+    border: none;
+    background: white;
+    color: $pri-dark;
+    border-radius: 10px;
+    padding: 0.3em 0.8em 0.4em;
+    box-shadow: 0 3px rgba($color: black, $alpha: 0.2);
+    font-size: 1rem;
+
+    &:active {
+        transform: translateY(1.5px); //pushes button down
+        filter: brightness(97%); //makes the button darker
+    }
+}
+
+.option_btn {
+    border: none;
+    background: var(--quiz_acc);
+    box-shadow: 0 5px rgba($color: black, $alpha: 0.2);
+
+    color: $pri-dark;
+    font-weight: 600;
+    padding: 1em 3em;
+    width: 100%;
+    border-radius: 10px;
+
+    @include for-tablet-portrait-up {
+        padding: 0.5em;
+    }
+
+    &:active {
+        transform: translateY(1.5px);
+        filter: brightness(97%);
+    }
 }
