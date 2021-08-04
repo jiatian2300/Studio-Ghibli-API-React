@@ -13,14 +13,47 @@
 }
 
 .start_screen {
-    .quiz {
+    .quiz,
+    .end {
         display: none;
     }
 }
 
 .quiz_screen {
-    .start {
+    .start,
+    .end {
         display: none;
+    }
+}
+
+.end_screen {
+    display: block;
+    .start,
+    .quiz {
+        display: none;
+    }
+}
+
+.start {
+    margin-top: 2em;
+    position: relative;
+    h1 {
+        position: relative;
+        z-index: 2;
+    }
+    button {
+        margin: 1.5em 0 0.3em;
+    }
+    .brush {
+        position: absolute;
+        width: fit-content;
+        left: 50%;
+        top: 0.7em;
+        transform: translate(-50%, 0) scale(2);
+        fill: var(--quiz_light);
+    }
+    p span {
+        font-size: 1.5rem;
     }
 }
 
@@ -100,4 +133,11 @@
             flex-direction: row;
         }
     }
+}
+
+.end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
 }

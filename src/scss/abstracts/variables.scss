@@ -68,10 +68,10 @@ $yellow: #ffe385;
     --species_3_bg: #d3e9ec;
     --species_3_acc: #dff7da;
 
-    --vehicle_4: #f8ac72;
-    --vehicle_4_light: #fcd9be;
-    --vehicle_4_bg: #ffebdc;
-    --vehicle_4_acc: #f5caca;
+    // --vehicle_4: #f8ac72;
+    // --vehicle_4_light: #fcd9be;
+    // --vehicle_4_bg: #ffebdc;
+    // --vehicle_4_acc: #f5caca;
 }
 
 .people {
@@ -91,10 +91,4 @@ $yellow: #ffe385;
     --quiz_acc: var(--species_3_acc);
     --quiz_light: var(--species_3_light);
     --quiz_dark: var(--species_3);
-}
-.vehicles {
-    --background: var(--vehicle_4_bg);
-    --quiz_acc: var(--vehicle_4_acc);
-    --quiz_light: var(--vehicle_4_light);
-    --quiz_dark: var(--vehicle_4);
 }

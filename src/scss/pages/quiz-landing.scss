@@ -1,5 +1,7 @@
 .quizzes {
     background: white;
+    height: calc(100vh + 16.5em);
+
     h1 {
         color: black;
     }
@@ -41,22 +43,24 @@
 }
 
 .people-1,
-.people .start_btn {
+.people .btn-3d {
     background: var(--people_1);
     border: 4px var(--people_1_light) solid;
 }
-.location-2 {
+.location-2,
+.locations .btn-3d {
     background: var(--location_2);
     border: 4px var(--location_2_light) solid;
 }
-.species-3 {
+.species-3,
+.species .btn-3d {
     background: var(--species_3);
     border: 4px var(--species_3_light) solid;
 }
-.vehicle-4 {
-    background: var(--vehicle_4);
-    border: 4px var(--vehicle_4_light) solid;
-}
+// .vehicle-4 {
+//     background: var(--vehicle_4);
+//     border: 4px var(--vehicle_4_light) solid;
+// }
 
 .categories {
     padding: 1.5em 0 0;

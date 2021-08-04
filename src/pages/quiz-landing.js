@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import train from "../images/train.gif";
 
 function QuizLanding({ setQuizCat }) {
+    useEffect(() => {
+        setQuizCat("");
+    }, [setQuizCat]);
+
     return (
         <div className="container landing-wrapper">
             <h1>TRIVIA QUIZ</h1>
@@ -36,15 +40,6 @@ function QuizLanding({ setQuizCat }) {
                     }}
                 >
                     Species
-                </Link>
-                <Link
-                    to="./quiz-start/vehicles"
-                    className="btn-3d vehicle-4"
-                    onClick={() => {
-                        setQuizCat("vehicle");
-                    }}
-                >
-                    Vehicle
                 </Link>
             </div>
         </div>
