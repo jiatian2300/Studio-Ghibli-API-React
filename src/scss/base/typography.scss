@@ -190,7 +190,7 @@ a {
     font-size: 3rem;
 
     @include for-tablet-landscape-up {
-        font-size: 3.5rem;
+        font-size: 3.4rem;
     }
 }
 
@@ -199,17 +199,9 @@ a {
     color: $pri-dark;
     font-size: 2.5rem;
 
-    @include for-tablet-landscape-up {
-        font-size: 3rem;
-    }
-
     span {
         font-family: "Londrina Outline", cursive;
         font-size: 1.8rem;
-
-        @include for-tablet-landscape-up {
-            font-size: 2rem;
-        }
     }
 }
 

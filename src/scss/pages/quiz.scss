@@ -25,15 +25,11 @@
 }
 
 .quiz {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8em;
-
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: -1em;
+        margin-bottom: 0.2em;
     }
 
     .stats {
@@ -43,7 +39,7 @@
 
         .score {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             gap: 0.5em;
 
             .score_value {
@@ -54,7 +50,7 @@
 
                 color: white;
                 font-family: "Londrina Solid", cursive;
-                font-size: 1.5rem;
+                font-size: 1.45rem;
                 font-weight: 300;
 
                 @include for-tablet-landscape-up {
@@ -65,10 +61,16 @@
     }
 
     .question {
+        margin: 1.5em 0;
         padding: 3em 1em;
-        background: white;
         border-radius: 10px;
+        min-height: 135px;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: white;
         color: $pri-dark;
         box-shadow: inset 0 4px 8px rgba($color: black, $alpha: 0.1);
 
@@ -76,6 +78,16 @@
             position: absolute;
             width: 3em;
             right: -0.5em;
+            bottom: -0.5em;
+        }
+
+        @include for-tablet-portrait-up {
+            padding: 3em 4em;
+            min-height: 162px;
+        }
+
+        @include for-tablet-landscape-up {
+            min-height: 152px;
         }
     }
 
