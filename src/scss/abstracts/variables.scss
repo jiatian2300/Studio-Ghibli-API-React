@@ -52,25 +52,41 @@ $yellow: #ffe385;
 
 .quiz-start,
 .quizzes {
-    //category colours
-    // --people_1: rgb(248, 213, 140);
-    // --people_1_light: rgb(248, 236, 183);
-    // --people_1_bg: rgb(255, 247, 223);
-    // --people_1_acc: #ffd6b4;
-    --people_1: #7681ff;
-    --people_1_light: #b3b9ff;
-    --people_1_bg: #d6d9fc;
-    --people_1_acc: #ffeadc;
+    /* =================
+    Theme 1: Muted Tones
+    ====================*/
+    --people_1: #edbeaf;
+    --people_1_light: rgb(238, 214, 204);
+    --people_1_bg: #f3e8e1;
+    --people_1_acc: #d9e9f3;
 
-    --location_2: #ff9492;
-    --location_2_light: #ffc8c6;
-    --location_2_bg: #ffded7;
-    --location_2_acc: #ecffff;
+    --location_2: #74a7be;
+    --location_2_light: #9ec1d6;
+    --location_2_bg: #d8e8f1;
+    --location_2_acc: #f3ddd7;
 
-    --species_3: #68cad7;
-    --species_3_light: #b0e2e9;
-    --species_3_bg: #d3e9ec;
-    --species_3_acc: #dff7da;
+    --species_3: #91aaa4;
+    --species_3_light: #a6c1bb;
+    --species_3_bg: #d3e6e2;
+    --species_3_acc: #f7ecda;
+
+    /* =================
+    Theme 2: Vibrant Tones
+    ====================*/
+    // --people_1: #7681ff;
+    // --people_1_light: #b3b9ff;
+    // --people_1_bg: #d6d9fc;
+    // --people_1_acc: #ffeadc;
+
+    // --location_2: #ff9492;
+    // --location_2_light: #ffc8c6;
+    // --location_2_bg: #ffded7;
+    // --location_2_acc: #ecffff;
+
+    // --species_3: #68cad7;
+    // --species_3_light: #b0e2e9;
+    // --species_3_bg: #d3e9ec;
+    // --species_3_acc: #dff7da;
 
     // --vehicle_4: #f8ac72;
     // --vehicle_4_light: #fcd9be;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import noface from "../images/noface.png";
+import confetti from "../images/confetti.gif";
 import { ReactComponent as Brush } from "../images/brush.svg";
 import { generateQns, randomUniqueNum } from "../util/generateQuizQns";
 import { getHighScore, saveHighScore } from "../util/localStorage";
@@ -12,6 +13,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
     const [currentQn, setCurrentQn] = useState({});
     const [currentAns, setCurrentAns] = useState();
     const [highScore, setHighScore] = useState(0);
+    const [newHighScore, setNewHighScore] = useState(false);
     const [btnDisable, setBtnDisable] = useState(false);
 
     const [startPage, setStart] = useState(false);
@@ -27,6 +29,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
             setQuestions(questions);
         }
         getQuestions();
+
         setHighScore(getHighScore(quizCat));
         setQuestions([]);
     }, [quizCat]);
@@ -52,18 +55,18 @@ function Quiz({ match, quizCat, setQuizCat }) {
 
         setBtnDisable(true);
         const timer = setTimeout(() => {
-            setQnNo(qnNo + 1);
-            setCurrentAns();
-            setBtnDisable(false);
-            getNextQn();
-
             if (qnNo === 10) {
-                setEnd(true);
                 if (score > highScore) {
                     saveHighScore(score, quizCat);
                     setHighScore(score);
+                    setNewHighScore(true);
                 }
+                setEnd(true);
             }
+            setQnNo(qnNo + 1);
+            setCurrentAns();
+            getNextQn();
+            setBtnDisable(false);
         }, 1000);
 
         return () => clearTimeout(timer);
@@ -72,6 +75,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
     function restart() {
         setQnNo(1);
         setScore(0);
+        setNewHighScore(false);
         setStart(false);
         setEnd(false);
     }
@@ -87,8 +91,13 @@ function Quiz({ match, quizCat, setQuizCat }) {
             }`}
         >
             <div className="start">
-                <Brush className="brush" />
-                <h1>{quizCat}</h1>
+                <Link to="../../quizzes" className="quit_btn">
+                    ×
+                </Link>
+                <header>
+                    <h1>{quizCat}</h1>
+                    <Brush className="brush" />
+                </header>
                 <button
                     className="btn-3d start_btn"
                     onClick={() => {
@@ -149,8 +158,14 @@ function Quiz({ match, quizCat, setQuizCat }) {
                 </div>
             </div>
             <div className="end">
-                <h1>Score: {score}</h1>
-                <p>High Score: {highScore}</p>
+                <div className={`hidden ${newHighScore ? "highscore" : ""}`}>
+                    <img src={confetti} alt="confetti" className="confetti" />
+                    <h4 style={{ color: "salmon" }}>New High Score!</h4>
+                </div>
+                <div>
+                    <h1>Score: {score}</h1>
+                    <p>High Score: {highScore}</p>
+                </div>
                 <button className="btn-3d" onClick={restart}>
                     Play Again
                 </button>

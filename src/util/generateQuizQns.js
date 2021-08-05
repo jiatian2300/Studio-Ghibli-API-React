@@ -6,13 +6,13 @@ const fetchItems = async (target) => {
 
 export function randomUniqueNum(range) {
     let arr = [];
-    for (let i = 1; i <= range; i++) {
+    for (let i = 1; i < range; i++) {
         arr.push(i);
     }
 
     let result = [];
 
-    for (let i = 1; i <= range; i++) {
+    for (let i = 1; i < range; i++) {
         const random = Math.floor(Math.random() * (range - i));
         result.push(arr[random]);
         arr[random] = arr[range - i];
@@ -22,7 +22,7 @@ export function randomUniqueNum(range) {
 }
 
 function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+    return Math.floor(Math.random() * (max - 1));
 }
 
 export async function generateQns(quizCat) {

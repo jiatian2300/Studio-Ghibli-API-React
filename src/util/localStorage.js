@@ -31,11 +31,10 @@ export function getHighScore(cat) {
                 { category: "species", score: 0 },
             ])
         );
-    } else {
-        let local = JSON.parse(localStorage.getItem("highscore"));
-        const catIndex = local.findIndex((obj) => obj.category === cat);
-        return local[catIndex].score;
     }
+    let local = JSON.parse(localStorage.getItem("highscore"));
+    const catIndex = local.findIndex((obj) => obj.category === cat);
+    return local[catIndex].score;
 }
 
 export function saveHighScore(highscore, cat) {

@@ -2,13 +2,13 @@ body,
 button {
     font-family: "Montserrat", sans-serif;
     @include for-tablet-portrait-up {
-        font-size: 18px;
+        font-size: 17px;
     }
     @include for-tablet-landscape-up {
         // font-size: 20px;
     }
     @include for-desktop-up {
-        font-size: 19px;
+        font-size: 18px;
     }
 }
 

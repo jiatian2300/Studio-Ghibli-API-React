@@ -24,6 +24,9 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                             setWatched={setWatched}
                         ></ToWatchItem>
                     ))}
+                    <p className={`${toWatch.length === 0 ? "" : "hidden"}`}>
+                        - Add some movies to watch! -
+                    </p>
                 </div>
             </div>
             <div className="watched">
@@ -43,6 +46,12 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                             setWatched={setWatched}
                         ></WatchedItem>
                     ))}
+                    <p
+                        style={{ color: "white" }}
+                        className={`${watched.length === 0 ? "" : "hidden"}`}
+                    >
+                        - Go watch a new movie! -
+                    </p>
                 </div>
             </div>
             <img className="toters" src={tots} alt="small white Totoros" />

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import train from "../images/train.gif";
+import cloud1 from "../images/cloud_1.png";
+import cloud2 from "../images/cloud_2.png";
 
 function QuizLanding({ setQuizCat }) {
     useEffect(() => {
@@ -10,6 +12,10 @@ function QuizLanding({ setQuizCat }) {
     return (
         <div className="container landing-wrapper">
             <h1>TRIVIA QUIZ</h1>
+            <div className="quiz_clouds">
+                <img src={cloud1} alt="cloud" className="cloud1" />
+                <img src={cloud2} alt="cloud" className="cloud2" />
+            </div>
             <div className="gif-wrapper">
                 <img src={train} alt="train arriving at station" />
             </div>
