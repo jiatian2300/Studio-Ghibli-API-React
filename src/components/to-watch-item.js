@@ -1,6 +1,14 @@
 import React from "react";
 
-function ToWatchItem({ movie, toWatch, setToWatch, watched, setWatched }) {
+function ToWatchItem({
+    movie,
+    toWatch,
+    setToWatch,
+    watched,
+    setWatched,
+    provided,
+    snapshot,
+}) {
     const addWatched = () => {
         setWatched([...watched, movie]);
         if (toWatch.includes(movie)) {
@@ -13,7 +21,12 @@ function ToWatchItem({ movie, toWatch, setToWatch, watched, setWatched }) {
     };
 
     return (
-        <div className="row">
+        <div
+            className={`row ${snapshot.isDragging && "dragging"}`}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+        >
             <div>
                 <p className="icon tick" onClick={addWatched}>
                     ✔️

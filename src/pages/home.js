@@ -1,7 +1,8 @@
 import React from "react";
 import totoro from "../images/totoro.png";
 import cloud from "../images/cloud.png";
-import kiki from "../images/kiki.png";
+import kiki from "../images/kiki_broom.gif";
+// import kiki from "../images/kiki.png";
 import soot from "../images/soot.png";
 import fire from "../images/fire.png";
 import scarecrow from "../images/scarecrow.png";
@@ -10,18 +11,21 @@ function Home() {
     return (
         <div className="container">
             <section className="hero">
-                <h1 className="studio_txt">Studio</h1>
                 <div className="hero_img">
                     <img src={totoro} alt="Totoro" />
                 </div>
-                <h1 className="ghibli_txt">Ghibli</h1>
+                <div className="title">
+                    <h1 className="studio_txt">Studio</h1>
+                    <h1 className="ghibli_txt">Ghibli</h1>
+                </div>
             </section>
 
             <section className="intro">
                 <img className="cloud cloud_one" src={cloud} alt="cloud" />
                 <h4>
-                    Find out all about Studio Glibli movies, sort out your own
-                    watch list and test your Ghibli knowledge through the quiz
+                    Find out more about all Studio Glibli movies, save movies to
+                    your own watch list and test your Ghibli knowledge through
+                    the trivia quizzes!
                 </h4>
                 <img className="cloud cloud_two" src={cloud} alt="cloud" />
                 <img className="kiki" src={kiki} alt="girl flying on broom" />

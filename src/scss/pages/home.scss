@@ -24,103 +24,94 @@
 ====================*/
 
 .hero {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+
+    margin-top: 4em;
     position: relative;
-    padding: 3em 0 0em;
 
     .hero_img {
-        position: relative;
-        text-align: left;
-        z-index: 1;
+        width: 50%;
+        max-width: 230px;
+        animation: grow 0.8s ease-in-out 1;
 
         img {
-            width: 50%;
-            max-width: 200px;
+            position: relative;
+            z-index: 2;
         }
 
         &::after {
+            position: absolute;
             content: "";
-            display: block;
-            z-index: -1;
+            background: $light-yellow;
+
             height: 100%;
             aspect-ratio: 1/1;
             border-radius: 50%;
-            background: $light-yellow;
-            position: absolute;
-            top: 0.5em;
+            left: -1em;
         }
     }
-
-    h1 {
-        position: absolute;
-        right: 4vw;
-        bottom: 0.3em;
-        z-index: 2;
-    }
-
-    .studio_txt {
-        right: 0;
-        bottom: 1.3em;
-    }
-
-    @include for-tablet-portrait-up {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
-        // grid-template-rows: 1fr 1fr;
-        // grid-auto-flow: dense;
-
-        // .hero_img {
-        //     grid-row: 1 / span 2;
-        // }
+    .title {
+        position: relative;
+        z-index: 3;
+        animation: flyin_right 0.8s ease-in-out 1;
     }
 
     @include for-tablet-landscape-up {
-        padding-top: 3em;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 6em;
         .hero_img {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .title {
+            position: absolute;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            gap: 10em;
 
-            img {
-                width: 90%;
-                max-width: 260px;
+            width: fit-content;
+            height: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: none;
+
+            .studio_txt {
+                animation: flyin_left 0.8s ease-in-out 1;
             }
-
-            &::after {
-                height: 100%;
-                margin-left: 3em;
+            .ghibli_txt {
+                align-self: flex-end;
+                animation: flyin_right 0.8s ease-in-out 1;
             }
-        }
-
-        h1 {
-            position: relative;
-            top: 17vw;
-        }
-
-        .studio_txt {
-            right: 0;
-            top: 0;
-            justify-self: end;
-            margin-right: -0.6em;
-        }
-
-        .ghibli_txt {
-            margin-left: 0em;
-            z-index: 2;
         }
     }
+}
 
-    @include for-tablet-landscape-up {
-        padding-top: 5em;
+@keyframes grow {
+    0% {
+        transform: scale(0);
     }
+    100% {
+        transform: scale(1);
+    }
+}
 
-    @include for-desktop-up {
-        h1 {
-            top: 1.5em;
-        }
-        .ghibli_txt {
-            margin-left: 0em;
-        }
+@keyframes flyin_right {
+    0% {
+        transform: translateX(60vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes flyin_left {
+    0% {
+        transform: translateX(-60vw);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -129,7 +120,7 @@
 ====================*/
 
 .intro {
-    padding: 10em 0 12em;
+    padding: 10em 0;
     position: relative;
 
     @include for-tablet-portrait-up {
@@ -137,7 +128,7 @@
     }
 
     h4 {
-        padding: 11vw 0em;
+        margin: 10vw 0em;
         position: relative;
 
         &::after {
@@ -147,12 +138,12 @@
             height: 6px;
             width: 30%;
             left: 35%;
-            bottom: 6vw;
+            bottom: -1em;
             background: $light-blue;
         }
 
         @include for-tablet-portrait-up {
-            padding: 14vw 14vw 10vw;
+            margin: 16vw 14vw 8vw;
         }
     }
 
@@ -166,20 +157,45 @@
         margin-left: -50%;
         margin-top: -7em;
         opacity: 0.8;
+        animation: float_right 200s ease-in-out infinite;
     }
     .cloud_two {
         right: 0;
         margin-right: -50%;
         bottom: 3.5em;
         opacity: 0.6;
+        animation: float_left 200s ease-in-out 4s infinite;
     }
     .kiki {
         position: absolute;
         height: calc(6em + 14vw);
-        max-height: 230px;
+        max-height: 300px;
         left: 0;
-        margin-left: -2em;
+        margin-left: -13%;
         bottom: 0;
+    }
+}
+
+@keyframes float_right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes float_left {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -188,7 +204,7 @@
 ====================*/
 
 main {
-    padding: 2em 0 1em;
+    padding-bottom: 4em;
     position: relative;
 
     header {
@@ -224,17 +240,23 @@ main {
         padding-top: 2em;
     }
 
-    .about {
+    .about header {
         h2 {
             margin-right: 2.6rem;
             @include yellow-circle(0, 1.6em);
         }
+        img {
+            animation: bouncing 1s ease-in-out infinite;
+        }
     }
 
-    .ghibli {
+    .ghibli header {
         h2 {
             margin-left: 2.6rem;
             @include yellow-circle(1.5em, null);
+        }
+        img {
+            animation: bouncing 1s ease-in-out 0.5s infinite;
         }
     }
 
@@ -243,8 +265,6 @@ main {
     }
 
     @include for-tablet-landscape-up {
-        padding: 2em 0;
-
         .about,
         .ghibli {
             display: flex;
@@ -263,5 +283,23 @@ main {
             bottom: -2em;
             left: -3.5em;
         }
+    }
+}
+
+@keyframes bouncing {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-1px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    80% {
+        transform: translateY(-1px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

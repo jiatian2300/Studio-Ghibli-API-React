@@ -3,8 +3,18 @@ import bath from "../images/bath.png";
 import tots from "../images/tots.png";
 import ToWatchItem from "../components/to-watch-item";
 import WatchedItem from "../components/watched-item";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function WatchList({ toWatch, setToWatch, watched, setWatched }) {
+    function handleOnDragEnd(result) {
+        if (!result.destination) return;
+        const list = Array.from(toWatch);
+        const [reorderedItem] = list.splice(result.source.index, 1);
+        list.splice(result.destination.index, 0, reorderedItem);
+
+        setToWatch(list);
+    }
+
     return (
         <div className="container watch-list-wrapper">
             <div className="to-watch">
@@ -14,20 +24,47 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                     </div>
                     <img className="duck" src={duck} alt="Duck" />
                 </header>
-                <div className="to-watch-list">
-                    {toWatch.map((movie) => (
-                        <ToWatchItem
-                            movie={movie}
-                            toWatch={toWatch}
-                            setToWatch={setToWatch}
-                            watched={watched}
-                            setWatched={setWatched}
-                        ></ToWatchItem>
-                    ))}
-                    <p className={`${toWatch.length === 0 ? "" : "hidden"}`}>
-                        - Add some movies to watch! -
-                    </p>
-                </div>
+
+                <DragDropContext onDragEnd={handleOnDragEnd}>
+                    <Droppable droppableId="List">
+                        {(provided) => (
+                            <div
+                                className="to-watch-list"
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                            >
+                                {toWatch.map((movie, index) => (
+                                    <Draggable
+                                        key={movie}
+                                        draggableId={movie}
+                                        index={index}
+                                    >
+                                        {(provided, snapshot) => (
+                                            <ToWatchItem
+                                                provided={provided}
+                                                snapshot={snapshot}
+                                                key={movie}
+                                                movie={movie}
+                                                toWatch={toWatch}
+                                                setToWatch={setToWatch}
+                                                watched={watched}
+                                                setWatched={setWatched}
+                                            ></ToWatchItem>
+                                        )}
+                                    </Draggable>
+                                ))}
+                                {provided.placeholder}
+                                <p
+                                    className={`${
+                                        toWatch.length === 0 ? "" : "hidden"
+                                    }`}
+                                >
+                                    - Add some movies to watch! -
+                                </p>
+                            </div>
+                        )}
+                    </Droppable>
+                </DragDropContext>
             </div>
             <div className="watched">
                 <header>
