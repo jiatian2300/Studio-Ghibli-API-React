@@ -1,9 +1,13 @@
 .quizzes {
-    background: white;
+    background: rgb(255, 252, 247);
     height: calc(100vh + 16.5em);
 
+    @include for-tablet-portrait-up {
+        height: 100%;
+    }
+
     h1 {
-        color: black;
+        color: $pri-dark;
     }
 }
 

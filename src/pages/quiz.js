@@ -10,7 +10,9 @@ function Quiz({ match, quizCat, setQuizCat }) {
     const [score, setScore] = useState(0);
     const [qnNo, setQnNo] = useState(1);
     const [currentQn, setCurrentQn] = useState({});
+    const [currentAns, setCurrentAns] = useState();
     const [highScore, setHighScore] = useState(0);
+    const [btnDisable, setBtnDisable] = useState(false);
 
     const [startPage, setStart] = useState(false);
     const [endPage, setEnd] = useState(false);
@@ -33,35 +35,35 @@ function Quiz({ match, quizCat, setQuizCat }) {
         getNextQn();
     }, [questions]);
 
-    useEffect(() => {
-        // setQuestions([]);
-    }, []);
-
-    function getNextQn() {
+    const getNextQn = () => {
         if (questions.length > 0) {
             const randomArray = randomUniqueNum(questions.length);
             const randomQnNo = randomArray[qnNo];
             setCurrentQn(questions[randomQnNo]);
         }
-    }
+    };
 
     function checkAns(choice) {
-        const correct = currentQn.option === currentQn.answer ? true : false;
-        if (choice === correct) {
+        const answer = currentQn.option === currentQn.answer ? true : false;
+        setCurrentAns(answer);
+        if (choice === answer) {
             setScore(score + 1);
         }
 
-        if (qnNo === 10) {
-            setEnd(true);
-            if (score > highScore) {
-                saveHighScore(score, quizCat);
-                setHighScore(score);
-            }
-        }
-
+        setBtnDisable(true);
         const timer = setTimeout(() => {
             setQnNo(qnNo + 1);
+            setCurrentAns();
+            setBtnDisable(false);
             getNextQn();
+
+            if (qnNo === 10) {
+                setEnd(true);
+                if (score > highScore) {
+                    saveHighScore(score, quizCat);
+                    setHighScore(score);
+                }
+            }
         }, 1000);
 
         return () => clearTimeout(timer);
@@ -127,14 +129,20 @@ function Quiz({ match, quizCat, setQuizCat }) {
                 </div>
                 <div className="options">
                     <button
-                        className="true option_btn"
+                        className={`true option_btn ${
+                            currentAns === true ? "answer" : ""
+                        }${currentAns === false ? "wrong" : ""}`}
                         onClick={() => checkAns(true)}
+                        disabled={btnDisable}
                     >
                         TRUE
                     </button>
                     <button
-                        className="false option_btn"
+                        className={`false option_btn ${
+                            currentAns === false ? "answer" : ""
+                        }${currentAns === true ? "wrong" : ""}`}
                         onClick={() => checkAns(false)}
+                        disabled={btnDisable}
                     >
                         FALSE
                     </button>
