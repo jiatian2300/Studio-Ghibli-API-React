@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Studio-Ghibli-API-React/static/css/main.1565b982.chunk.css",
-    "main.js": "/Studio-Ghibli-API-React/static/js/main.a1190d0e.chunk.js",
-    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.a1190d0e.chunk.js.map",
+    "main.js": "/Studio-Ghibli-API-React/static/js/main.28dc6841.chunk.js",
+    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.28dc6841.chunk.js.map",
     "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js",
     "runtime-main.js.map": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js.map",
-    "static/js/2.a2a23725.chunk.js": "/Studio-Ghibli-API-React/static/js/2.a2a23725.chunk.js",
-    "static/js/2.a2a23725.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.a2a23725.chunk.js.map",
+    "static/js/2.2af5ea8c.chunk.js": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js",
+    "static/js/2.2af5ea8c.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js.map",
     "static/js/3.513f40fe.chunk.js": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js",
     "static/js/3.513f40fe.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js.map",
     "index.html": "/Studio-Ghibli-API-React/index.html",
     "static/css/main.1565b982.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.1565b982.chunk.css.map",
-    "static/js/2.a2a23725.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.a2a23725.chunk.js.LICENSE.txt",
+    "static/js/2.2af5ea8c.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js.LICENSE.txt",
     "static/media/Arrietty.jpg": "/Studio-Ghibli-API-React/static/media/Arrietty.e7a72fa3.jpg",
     "static/media/Castle in the Sky.jpg": "/Studio-Ghibli-API-React/static/media/Castle in the Sky.8677928b.jpg",
     "static/media/From Up on Poppy Hill.jpg": "/Studio-Ghibli-API-React/static/media/From Up on Poppy Hill.a3559cd7.jpg",
@@ -62,8 +62,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dbf869bd.js",
-    "static/js/2.a2a23725.chunk.js",
+    "static/js/2.2af5ea8c.chunk.js",
     "static/css/main.1565b982.chunk.css",
-    "static/js/main.a1190d0e.chunk.js"
+    "static/js/main.28dc6841.chunk.js"
   ]
 }
