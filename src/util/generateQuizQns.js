@@ -5,6 +5,9 @@ const fetchItems = async (target) => {
 };
 
 export function randomUniqueNum(range) {
+    if (range === 1) {
+        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    }
     let arr = [];
     for (let i = 1; i < range; i++) {
         arr.push(i);
@@ -205,15 +208,18 @@ async function species(items, films) {
             Question Type 1: Is this species in this film?
         =====================*/
         const all_present_films = item.films;
-        all_present_films.map((film_present) => {
+        const wrong = films.filter((x) => !all_present_films.includes(x.url));
+        const random = randomUniqueNum(wrong.length);
+        console.log(wrong);
+        console.log(all_present_films);
+        all_present_films.map((film_present, index) => {
             const film_url = film_present.split("/");
             const film_ans = films.filter(
                 (x) => x.id === film_url[film_url.length - 1]
             );
+            console.log(wrong[random[index]]);
             const film_option =
-                Math.random() < 0.5
-                    ? films[getRandomInt(films.length)]
-                    : film_ans[0];
+                Math.random() < 0.5 ? wrong[random[index]] : film_ans[0];
 
             const question_1 = `${item.name}s appear in the movie, ${film_option.title}.`;
 

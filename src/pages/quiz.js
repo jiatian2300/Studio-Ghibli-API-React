@@ -26,6 +26,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
     useEffect(() => {
         async function getQuestions() {
             const questions = await generateQns(quizCat);
+            console.log(questions);
             setQuestions(questions);
         }
         getQuestions();
@@ -37,6 +38,14 @@ function Quiz({ match, quizCat, setQuizCat }) {
     useEffect(() => {
         getNextQn();
     }, [questions]);
+
+    useEffect(() => {
+        if (score > highScore) {
+            saveHighScore(score, quizCat);
+            setHighScore(score);
+            setNewHighScore(true);
+        }
+    }, [score]);
 
     const getNextQn = () => {
         if (questions.length > 0) {
@@ -56,11 +65,6 @@ function Quiz({ match, quizCat, setQuizCat }) {
         setBtnDisable(true);
         const timer = setTimeout(() => {
             if (qnNo === 10) {
-                if (score > highScore) {
-                    saveHighScore(score, quizCat);
-                    setHighScore(score);
-                    setNewHighScore(true);
-                }
                 setEnd(true);
             }
             setQnNo(qnNo + 1);

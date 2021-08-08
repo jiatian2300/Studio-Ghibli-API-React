@@ -91,15 +91,15 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
 
     async function moveOn(all_movie) {
         const currentIndex = await all_movie.findIndex(
-            (item) => item.id == match.params.id
+            (item) => item.id === match.params.id
         );
-        if (currentIndex == 0) {
+        if (currentIndex === 0) {
             setTarget([
                 `/movie-details/${all_movie[currentIndex].id}`,
                 `/movie-details/${all_movie[currentIndex + 1].id}`,
             ]);
             setCurrentIndex("first");
-        } else if (currentIndex == all_movie.length - 1) {
+        } else if (currentIndex === all_movie.length - 1) {
             setTarget([
                 `/movie-details/${all_movie[currentIndex - 1].id}`,
                 `/movie-details/${all_movie[currentIndex].id}`,
