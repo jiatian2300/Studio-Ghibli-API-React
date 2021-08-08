@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Studio-Ghibli-API-React/static/css/main.1565b982.chunk.css",
-    "main.js": "/Studio-Ghibli-API-React/static/js/main.28dc6841.chunk.js",
-    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.28dc6841.chunk.js.map",
+    "main.css": "/Studio-Ghibli-API-React/static/css/main.f414dbb9.chunk.css",
+    "main.js": "/Studio-Ghibli-API-React/static/js/main.89d538fe.chunk.js",
+    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.89d538fe.chunk.js.map",
     "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js",
     "runtime-main.js.map": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js.map",
-    "static/js/2.2af5ea8c.chunk.js": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js",
-    "static/js/2.2af5ea8c.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js.map",
+    "static/js/2.ade2ac7e.chunk.js": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js",
+    "static/js/2.ade2ac7e.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js.map",
     "static/js/3.513f40fe.chunk.js": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js",
     "static/js/3.513f40fe.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js.map",
     "index.html": "/Studio-Ghibli-API-React/index.html",
-    "static/css/main.1565b982.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.1565b982.chunk.css.map",
-    "static/js/2.2af5ea8c.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.2af5ea8c.chunk.js.LICENSE.txt",
+    "static/css/main.f414dbb9.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.f414dbb9.chunk.css.map",
+    "static/js/2.ade2ac7e.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js.LICENSE.txt",
     "static/media/Arrietty.jpg": "/Studio-Ghibli-API-React/static/media/Arrietty.e7a72fa3.jpg",
     "static/media/Castle in the Sky.jpg": "/Studio-Ghibli-API-React/static/media/Castle in the Sky.8677928b.jpg",
     "static/media/From Up on Poppy Hill.jpg": "/Studio-Ghibli-API-React/static/media/From Up on Poppy Hill.a3559cd7.jpg",
@@ -38,6 +38,7 @@
     "static/media/brush.872ca29f.svg": "/Studio-Ghibli-API-React/static/media/brush.872ca29f.svg",
     "static/media/bush1.008c532a.png": "/Studio-Ghibli-API-React/static/media/bush1.008c532a.png",
     "static/media/bush2.42792563.png": "/Studio-Ghibli-API-React/static/media/bush2.42792563.png",
+    "static/media/check.fe902a81.svg": "/Studio-Ghibli-API-React/static/media/check.fe902a81.svg",
     "static/media/chu_totoro.520a2b7c.png": "/Studio-Ghibli-API-React/static/media/chu_totoro.520a2b7c.png",
     "static/media/cloud.e9f00ecd.png": "/Studio-Ghibli-API-React/static/media/cloud.e9f00ecd.png",
     "static/media/cloud_1.5de6ca2c.png": "/Studio-Ghibli-API-React/static/media/cloud_1.5de6ca2c.png",
@@ -52,6 +53,7 @@
     "static/media/logo.6f716474.svg": "/Studio-Ghibli-API-React/static/media/logo.6f716474.svg",
     "static/media/music.f64f03b4.gif": "/Studio-Ghibli-API-React/static/media/music.f64f03b4.gif",
     "static/media/noface.61cfbc15.png": "/Studio-Ghibli-API-React/static/media/noface.61cfbc15.png",
+    "static/media/reload.41f41d29.svg": "/Studio-Ghibli-API-React/static/media/reload.41f41d29.svg",
     "static/media/scarecrow.b21fa2f5.png": "/Studio-Ghibli-API-React/static/media/scarecrow.b21fa2f5.png",
     "static/media/soot.ba96296d.png": "/Studio-Ghibli-API-React/static/media/soot.ba96296d.png",
     "static/media/totoro.91d9827a.png": "/Studio-Ghibli-API-React/static/media/totoro.91d9827a.png",
@@ -62,8 +64,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dbf869bd.js",
-    "static/js/2.2af5ea8c.chunk.js",
-    "static/css/main.1565b982.chunk.css",
-    "static/js/main.28dc6841.chunk.js"
+    "static/js/2.ade2ac7e.chunk.js",
+    "static/css/main.f414dbb9.chunk.css",
+    "static/js/main.89d538fe.chunk.js"
   ]
 }
