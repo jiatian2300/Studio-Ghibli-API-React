@@ -36,7 +36,7 @@
     .hero_img {
         width: 50%;
         max-width: 230px;
-        animation: grow 0.8s ease-in-out 1;
+        animation: grow 1s ease-in-out 1;
 
         img {
             position: relative;
@@ -57,7 +57,7 @@
     .title {
         position: relative;
         z-index: 3;
-        animation: flyin_right 0.8s ease-in-out 1;
+        animation: flyin_right 1s ease-in-out 1;
     }
 
     @include for-tablet-landscape-up {
@@ -79,11 +79,11 @@
             animation: none;
 
             .studio_txt {
-                animation: flyin_left 0.8s ease-in-out 1;
+                animation: flyin_left 1s ease-in-out 1;
             }
             .ghibli_txt {
                 align-self: flex-end;
-                animation: flyin_right 0.8s ease-in-out 1;
+                animation: flyin_right 1s ease-in-out 1;
             }
         }
     }
@@ -156,46 +156,47 @@
         left: 0;
         margin-left: -50%;
         margin-top: -7em;
-        opacity: 0.8;
-        animation: float_right 200s ease-in-out infinite;
+        opacity: 0.75;
+        animation: float_right 220s ease-in-out infinite;
     }
     .cloud_two {
         right: 0;
         margin-right: -50%;
         bottom: 3.5em;
         opacity: 0.6;
-        animation: float_left 200s ease-in-out 4s infinite;
+        transform: scale(0.8);
+        animation: float_left 220s ease-in-out 8s infinite;
     }
     .kiki {
         position: absolute;
         height: calc(6em + 14vw);
         max-height: 300px;
         left: 0;
-        margin-left: -13%;
+        margin-left: -20%;
         bottom: 0;
     }
 }
 
 @keyframes float_right {
     0% {
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
     }
     50% {
-        transform: translateX(100vw);
+        transform: translateX(100vw) scale(0.8);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
     }
 }
 @keyframes float_left {
     0% {
-        transform: translateX(0);
+        transform: translateX(0) scale(0.8);
     }
     50% {
-        transform: translateX(-100vw);
+        transform: translateX(-100vw) scale(0.9);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0) scale(0.8);
     }
 }
 
@@ -246,7 +247,7 @@ main {
             @include yellow-circle(0, 1.6em);
         }
         img {
-            animation: bouncing 1s ease-in-out infinite;
+            animation: bouncing 0.8s ease-in-out infinite;
         }
     }
 
@@ -256,7 +257,7 @@ main {
             @include yellow-circle(1.5em, null);
         }
         img {
-            animation: bouncing 1s ease-in-out 0.5s infinite;
+            animation: bouncing 0.8s ease-in-out 0.5s infinite;
         }
     }
 
@@ -288,18 +289,18 @@ main {
 
 @keyframes bouncing {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) scaleY(0.98);
     }
-    20% {
+    15% {
         transform: translateY(-1px);
     }
     50% {
         transform: translateY(-4px);
     }
-    80% {
+    85% {
         transform: translateY(-1px);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0) scaleY(0.98);
     }
 }

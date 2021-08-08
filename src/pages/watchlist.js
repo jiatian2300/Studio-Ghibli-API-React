@@ -56,7 +56,9 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                                 {provided.placeholder}
                                 <p
                                     className={`${
-                                        toWatch.length === 0 ? "" : "hidden"
+                                        toWatch.length === 0
+                                            ? "none_msg"
+                                            : "hidden"
                                     }`}
                                 >
                                     - Add some movies to watch! -
@@ -76,6 +78,7 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                 <div className="watched-list">
                     {watched.map((movie) => (
                         <WatchedItem
+                            key={movie}
                             movie={movie}
                             toWatch={toWatch}
                             setToWatch={setToWatch}
@@ -85,7 +88,9 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                     ))}
                     <p
                         style={{ color: "white" }}
-                        className={`${watched.length === 0 ? "" : "hidden"}`}
+                        className={`${
+                            watched.length === 0 ? "none_msg" : "hidden"
+                        }`}
                     >
                         - Go watch a new movie! -
                     </p>

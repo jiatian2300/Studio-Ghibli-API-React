@@ -1,4 +1,5 @@
 import React from "react";
+import tick from "../images/check.svg";
 
 function ToWatchItem({
     movie,
@@ -28,9 +29,12 @@ function ToWatchItem({
             ref={provided.innerRef}
         >
             <div>
-                <p className="icon tick" onClick={addWatched}>
-                    ✔️
-                </p>
+                <img
+                    src={tick}
+                    className="icon tick"
+                    onClick={addWatched}
+                    alt="tick"
+                ></img>
                 <p className="watch_txt">{movie}</p>
             </div>
             <p className="icon cross" onClick={removeToWatch}>

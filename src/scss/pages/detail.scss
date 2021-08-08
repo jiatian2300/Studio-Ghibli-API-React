@@ -1,12 +1,12 @@
 .movie-details {
-    background: white;
+    background: rgb(251, 255, 255);
 }
 
 .details-wrapper {
-    padding: 4em 0 3em;
+    padding: 4em 0 1em;
 
     @include for-desktop-up {
-        padding: 1em 0 3em;
+        padding: 1.7em 0 1em;
     }
 
     .loader {
@@ -34,6 +34,7 @@
         z-index: 2;
         border: 3px white solid;
         background: white;
+        border-radius: 8px;
     }
 
     &::after,
@@ -43,6 +44,7 @@
         width: 15em;
         aspect-ratio: 15/22;
         max-width: 260px;
+        border-radius: 8px;
     }
 
     &::before {
@@ -77,6 +79,7 @@
     color: $pri-dark;
     position: relative;
     line-height: 1.2;
+    border-radius: 10px;
 
     animation-name: animatebottom;
     animation-duration: 1s;
@@ -147,6 +150,12 @@
             top: 0;
         }
     }
+}
+
+.move_on {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
 }
 
 @include for-desktop-up {

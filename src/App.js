@@ -33,8 +33,8 @@ function App() {
         Handle save and load from local storage
     =============================================*/
     useEffect(() => {
-        setToWatch(getLocalToWatch);
-        setWatched(getLocalWatched);
+        setToWatch(getLocalToWatch());
+        setWatched(getLocalWatched());
     }, []);
 
     useEffect(() => {

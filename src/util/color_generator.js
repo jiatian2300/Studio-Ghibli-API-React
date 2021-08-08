@@ -14,8 +14,6 @@ export const rgbToHex = (r, g, b) =>
 // the text which are theme coloured
 
 export const hexToLuma = (colour) => {
-    // const [bg, setBg] = useState("white");
-
     const hex = colour.replace(/#/, "");
     const r = parseInt(hex.substr(0, 2), 16);
     const g = parseInt(hex.substr(2, 2), 16);
@@ -25,7 +23,7 @@ export const hexToLuma = (colour) => {
     if (lum > 0.7) {
         return adjustBrightness(colour, -60);
     } else {
-        return adjustBrightness(colour, 140);
+        return adjustBrightness(colour, 145);
     }
 };
 
