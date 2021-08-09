@@ -19,21 +19,23 @@ function Quiz({ match, quizCat, setQuizCat }) {
     const [startPage, setStart] = useState(false);
     const [endPage, setEnd] = useState(false);
 
-    useEffect(() => {
-        setQuizCat(match.params.category);
-    }, [match, setQuizCat]);
+    // useEffect(() => {
+    //     setQuizCat(match.params.category);
+    // }, [match, setQuizCat]);
 
     useEffect(() => {
         async function getQuestions() {
-            const questions = await generateQns(quizCat);
-            console.log(questions);
+            const cat = await match.params.category;
+            setQuizCat(cat);
+            const questions = await generateQns(cat);
+            // console.log(questions);
             setQuestions(questions);
         }
         getQuestions();
 
         setHighScore(getHighScore(quizCat));
         setQuestions([]);
-    }, [quizCat]);
+    }, [match, setQuizCat, quizCat]);
 
     useEffect(() => {
         getNextQn();
@@ -45,7 +47,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
             setHighScore(score);
             setNewHighScore(true);
         }
-    }, [score]);
+    }, [score, highScore, quizCat]);
 
     const getNextQn = () => {
         if (questions.length > 0) {
@@ -168,7 +170,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
                 </div>
                 <div>
                     <h1>Score: {score}</h1>
-                    <p>High Score: {highScore}</p>
+                    <p style={{ fontSize: "1rem" }}>High Score: {highScore}</p>
                 </div>
                 <button className="btn-3d" onClick={restart}>
                     Play Again

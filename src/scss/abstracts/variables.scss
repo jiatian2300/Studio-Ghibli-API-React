@@ -57,18 +57,21 @@ $yellow: #ffe385;
     ====================*/
     --people_1: #edbeaf;
     --people_1_light: rgb(238, 214, 204);
-    --people_1_bg: #f3e8e1;
+    --people_1_bg: #f7ebe4;
     --people_1_acc: #d9e9f3;
+    --people_1_shadow: #9bbeec;
 
     --location_2: #74a7be;
     --location_2_light: #9ec1d6;
     --location_2_bg: #d8e8f1;
     --location_2_acc: #f3ddd7;
+    --location_2_shadow: #e7b8a9;
 
     --species_3: #91aaa4;
     --species_3_light: #a6c1bb;
     --species_3_bg: #d3e6e2;
-    --species_3_acc: #f7ecda;
+    --species_3_acc: #fce8d0;
+    --species_3_shadow: #fcc898;
 
     /* =================
     Theme 2: Vibrant Tones
@@ -99,16 +102,18 @@ $yellow: #ffe385;
     --quiz_acc: var(--people_1_acc);
     --quiz_light: var(--people_1_light);
     --quiz_dark: var(--people_1);
+    --quiz_shadow: var(--people_1_shadow);
 }
 .locations {
     --background: var(--location_2_bg);
     --quiz_acc: var(--location_2_acc);
     --quiz_light: var(--location_2_light);
     --quiz_dark: var(--location_2);
+    --quiz_shadow: var(--location_2_shadow);
 }
 .species {
     --background: var(--species_3_bg);
     --quiz_acc: var(--species_3_acc);
     --quiz_light: var(--species_3_light);
-    --quiz_dark: var(--species_3);
+    --quiz_shadow: var(--species_3_shadow);
 }

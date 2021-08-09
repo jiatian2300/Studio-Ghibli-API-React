@@ -1,6 +1,7 @@
 import duck from "../images/duck.png";
 import bath from "../images/bath.png";
 import tots from "../images/tots.png";
+import arrow from "../images/curly_arrow.svg";
 import ToWatchItem from "../components/to-watch-item";
 import WatchedItem from "../components/watched-item";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -23,6 +24,11 @@ function WatchList({ toWatch, setToWatch, watched, setWatched }) {
                         To Watch <span>List</span>
                     </div>
                     <img className="duck" src={duck} alt="Duck" />
+                    <div className="drag">
+                        Drag to <br />
+                        Rearrange
+                        <img src={arrow} alt="curly arrow" />
+                    </div>
                 </header>
 
                 <DragDropContext onDragEnd={handleOnDragEnd}>

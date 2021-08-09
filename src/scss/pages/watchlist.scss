@@ -11,13 +11,55 @@
 
 .watch-list header {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     gap: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 2.5em;
 
     img {
         width: 3em;
+    }
+
+    .drag {
+        position: absolute;
+        right: 0;
+        top: 5.5em;
+        font-size: 0.7em;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        animation: jiggle 0.5s ease 0.4s 1;
+
+        @include for-tablet-portrait-up {
+            top: 2.5em;
+            font-size: 0.8rem;
+
+            img {
+                transform: rotate(-10deg);
+                width: 4em;
+                margin-left: -2em;
+            }
+        }
+    }
+}
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(8deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-8deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
 

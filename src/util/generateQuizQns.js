@@ -18,7 +18,7 @@ export function randomUniqueNum(range) {
     for (let i = 1; i < range; i++) {
         const random = Math.floor(Math.random() * (range - i));
         result.push(arr[random]);
-        arr[random] = arr[range - i];
+        arr.splice(random, 1);
     }
 
     return result;
@@ -203,6 +203,18 @@ async function locations(items, films) {
 async function species(items, films) {
     const questions = [];
 
+    // items.map((item)=>{
+    //     const all_present_films = item.films;
+    //     films.map((film)=>{
+    //         const film_option
+    //         if(all_present_films.includes(film.url)){
+    //             const film_ans = films.filter(
+    //             (x) => x.id === film_url[film_url.length - 1]
+    //         );
+    //         }
+    //     })
+    // })
+
     items.map((item) => {
         /* ==================
             Question Type 1: Is this species in this film?
@@ -210,16 +222,12 @@ async function species(items, films) {
         const all_present_films = item.films;
         const wrong = films.filter((x) => !all_present_films.includes(x.url));
         const random = randomUniqueNum(wrong.length);
-        console.log(wrong);
-        console.log(all_present_films);
         all_present_films.map((film_present, index) => {
             const film_url = film_present.split("/");
             const film_ans = films.filter(
                 (x) => x.id === film_url[film_url.length - 1]
             );
-            console.log(wrong[random[index]]);
-            const film_option =
-                Math.random() < 0.5 ? wrong[random[index]] : film_ans[0];
+            const film_option = wrong[random[index]];
 
             const question_1 = `${item.name}s appear in the movie, ${film_option.title}.`;
 
@@ -228,10 +236,29 @@ async function species(items, films) {
                 option: film_option.id,
                 answer: film_ans[0].id,
             });
+
+            const question_2 = `${item.name}s appear in the movie, ${film_ans[0].title}.`;
+
+            questions.push({
+                question: question_2,
+                option: film_ans[0].id,
+                answer: film_ans[0].id,
+            });
+
             return true;
         });
         return true;
     });
-    return questions;
+
+    const map = new Map();
+    questions.forEach((qn) => {
+        if (!map.has(qn.question)) {
+            map.set(qn.question, qn);
+        }
+    });
+
+    return [...map.values()];
+
+    // return questions;
 }
 // async function vehicles(items, films) {}

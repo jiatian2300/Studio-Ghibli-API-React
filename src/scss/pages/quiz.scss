@@ -145,9 +145,11 @@
 
     .answer {
         background: rgb(197, 235, 183);
+        box-shadow: 0 5px rgb(145, 207, 122), 0 6px 10px var(--quiz_light);
     }
     .wrong {
         background: rgb(255, 192, 192);
+        box-shadow: 0 5px rgb(228, 143, 143), 0 6px 10px var(--quiz_light);
     }
 }
 
@@ -158,6 +160,11 @@
     gap: 0.7em;
     position: relative;
 
+    h1 {
+        font-family: "Londrina Solid", cursive;
+        text-shadow: 2px 2px var(--quiz_dark);
+    }
+
     .btn-3d {
         position: relative;
         z-index: 2;
@@ -165,7 +172,6 @@
 
     .highscore {
         display: block;
-
         .confetti {
             width: 30em;
             position: absolute;

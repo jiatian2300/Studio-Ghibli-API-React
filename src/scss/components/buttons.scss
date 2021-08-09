@@ -154,8 +154,7 @@
 .option_btn {
     border: none;
     background: var(--quiz_acc);
-    box-shadow: 0 5px rgba($color: black, $alpha: 0.2),
-        0 6px 10px var(--quiz_light);
+    box-shadow: 0 5px var(--quiz_shadow), 0 6px 8px var(--quiz_dark);
 
     color: $pri-dark;
     font-weight: 600;
