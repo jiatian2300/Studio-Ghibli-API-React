@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Redirect, Link } from "react-router-dom";
-import kodama from "../images/kodama.png";
+import head from "../images/kodama_head.png";
+import body from "../images/kodama_body.png";
 import loader from "../images/music.gif";
 
 function Details({ match, toWatch, setToWatch, watched, setWatched }) {
@@ -166,7 +167,8 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
                 </div>
             </div>
             <div className={`description ${loading ? "hidden" : ""}`}>
-                <img src={kodama} alt="kodama" className="kodama" />
+                <img className="body" src={body} alt="kodama" />
+                <img className="head" src={head} alt="kodama" />
                 {movie.description}
             </div>
             <div className={`move_on ${loading ? "hidden" : ""}`}>

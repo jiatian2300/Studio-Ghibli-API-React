@@ -15,20 +15,16 @@ function Quiz({ match, quizCat, setQuizCat }) {
     const [highScore, setHighScore] = useState(0);
     const [newHighScore, setNewHighScore] = useState(false);
     const [btnDisable, setBtnDisable] = useState(false);
+    const [counter, setCounter] = useState(100);
 
     const [startPage, setStart] = useState(false);
     const [endPage, setEnd] = useState(false);
-
-    // useEffect(() => {
-    //     setQuizCat(match.params.category);
-    // }, [match, setQuizCat]);
 
     useEffect(() => {
         async function getQuestions() {
             const cat = await match.params.category;
             setQuizCat(cat);
             const questions = await generateQns(cat);
-            // console.log(questions);
             setQuestions(questions);
         }
         getQuestions();
@@ -39,6 +35,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
 
     useEffect(() => {
         getNextQn();
+        setCounter(100);
     }, [questions]);
 
     useEffect(() => {
@@ -49,8 +46,18 @@ function Quiz({ match, quizCat, setQuizCat }) {
         }
     }, [score, highScore, quizCat]);
 
+    useEffect(() => {
+        if (counter === 0) {
+            checkAns(null);
+        }
+        const timer =
+            counter > 0 && setInterval(() => setCounter(counter - 1), 100);
+        return () => clearInterval(timer);
+    }, [counter]);
+
     const getNextQn = () => {
         if (questions.length > 0) {
+            setCounter(100);
             const randomArray = randomUniqueNum(questions.length);
             const randomQnNo = randomArray[qnNo];
             setCurrentQn(questions[randomQnNo]);
@@ -60,6 +67,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
     function checkAns(choice) {
         const answer = currentQn.option === currentQn.answer ? true : false;
         setCurrentAns(answer);
+        setCounter(0);
         if (choice === answer) {
             setScore(score + 1);
         }
@@ -81,6 +89,7 @@ function Quiz({ match, quizCat, setQuizCat }) {
     function restart() {
         setQnNo(1);
         setScore(0);
+        setCounter(100);
         setNewHighScore(false);
         setStart(false);
         setEnd(false);
@@ -133,6 +142,12 @@ function Quiz({ match, quizCat, setQuizCat }) {
                         <div className="stat_txt score_txt">Score</div>
                         <div className="score_value">{score}</div>
                     </div>
+                </div>
+                <div className="timer">
+                    <div
+                        className="progress"
+                        style={{ width: `${counter}%` }}
+                    ></div>
                 </div>
                 <div className="question">
                     <div className="question_txt">{currentQn.question}</div>

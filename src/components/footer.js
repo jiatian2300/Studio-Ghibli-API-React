@@ -19,7 +19,7 @@ function Footer() {
                 </Link>
                 <button className="up" onClick={scrollToTop}>
                     <u>Back to Top</u>
-                    <span>🠕</span>
+                    <span>↑</span>
                 </button>
             </div>
         </footer>

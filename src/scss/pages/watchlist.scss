@@ -26,11 +26,12 @@
         right: 0;
         top: 5.5em;
         font-size: 0.7em;
+        z-index: 0;
 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        animation: jiggle 0.5s ease 0.4s 1;
+        animation: jiggle_fade 3s ease 0.4s forwards 1;
 
         @include for-tablet-portrait-up {
             top: 2.5em;
@@ -45,21 +46,24 @@
     }
 }
 
-@keyframes jiggle {
+@keyframes jiggle_fade {
     0% {
         transform: rotate(0deg);
+        opacity: 1;
     }
     25% {
-        transform: rotate(8deg);
+        transform: rotate(-8deg);
     }
     50% {
-        transform: rotate(0deg);
+        transform: rotate(8deg);
     }
     75% {
         transform: rotate(-8deg);
+        opacity: 1;
     }
     100% {
         transform: rotate(0deg);
+        opacity: 0;
     }
 }
 
@@ -199,7 +203,9 @@
     transition: all 0.2s ease-in-out;
     &:hover {
         transform: scale(1.2);
-        color: rgb(255, 103, 103);
+        p {
+            color: rgb(255, 103, 103);
+        }
     }
 }
 

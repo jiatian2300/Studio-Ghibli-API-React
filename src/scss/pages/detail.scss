@@ -97,12 +97,21 @@
     .description {
         padding: 2.5em;
 
-        .kodama {
+        .head {
             position: absolute;
             display: block;
             width: 3.5em;
             left: -1.5em;
             bottom: -1em;
+            animation: jiggle 3s ease 0.4s forwards infinite;
+            opacity: 0.95;
+        }
+        .body {
+            position: absolute;
+            width: 3.5em;
+            left: -1.5em;
+            bottom: -1em;
+            opacity: 0.85;
         }
     }
 }
@@ -155,7 +164,11 @@
 .move_on {
     display: flex;
     justify-content: space-between;
-    margin-top: 4em;
+    margin: 3em 0 1em;
+
+    @include for-tablet-portrait-up {
+        margin: 3em 0 0;
+    }
 }
 
 @include for-desktop-up {
@@ -166,4 +179,19 @@
 
 .hidden {
     display: none;
+}
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }

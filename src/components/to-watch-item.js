@@ -37,9 +37,9 @@ function ToWatchItem({
                 ></img>
                 <p className="watch_txt">{movie}</p>
             </div>
-            <p className="icon cross" onClick={removeToWatch}>
-                ✕
-            </p>
+            <div className="icon cross" onClick={removeToWatch}>
+                <p>✕</p>
+            </div>
         </div>
     );
 }
