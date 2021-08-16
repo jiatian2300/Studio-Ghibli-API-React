@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Studio-Ghibli-API-React/static/css/main.ef900579.chunk.css",
-    "main.js": "/Studio-Ghibli-API-React/static/js/main.bf09fedf.chunk.js",
-    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.bf09fedf.chunk.js.map",
+    "main.css": "/Studio-Ghibli-API-React/static/css/main.865991b6.chunk.css",
+    "main.js": "/Studio-Ghibli-API-React/static/js/main.4a96ba83.chunk.js",
+    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.4a96ba83.chunk.js.map",
     "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js",
     "runtime-main.js.map": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js.map",
-    "static/js/2.ade2ac7e.chunk.js": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js",
-    "static/js/2.ade2ac7e.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js.map",
+    "static/js/2.199e7936.chunk.js": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js",
+    "static/js/2.199e7936.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js.map",
     "static/js/3.513f40fe.chunk.js": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js",
     "static/js/3.513f40fe.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js.map",
     "index.html": "/Studio-Ghibli-API-React/index.html",
-    "static/css/main.ef900579.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.ef900579.chunk.css.map",
-    "static/js/2.ade2ac7e.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.ade2ac7e.chunk.js.LICENSE.txt",
+    "static/css/main.865991b6.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.865991b6.chunk.css.map",
+    "static/js/2.199e7936.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js.LICENSE.txt",
     "static/media/Arrietty.jpg": "/Studio-Ghibli-API-React/static/media/Arrietty.e7a72fa3.jpg",
     "static/media/Castle in the Sky.jpg": "/Studio-Ghibli-API-React/static/media/Castle in the Sky.8677928b.jpg",
     "static/media/From Up on Poppy Hill.jpg": "/Studio-Ghibli-API-React/static/media/From Up on Poppy Hill.a3559cd7.jpg",
@@ -50,7 +50,7 @@
     "static/media/App.scss": "/Studio-Ghibli-API-React/static/media/home_bg.bb449d3e.png",
     "static/media/jiji.c8f1dc65.png": "/Studio-Ghibli-API-React/static/media/jiji.c8f1dc65.png",
     "static/media/kiki_broom.37b2c210.gif": "/Studio-Ghibli-API-React/static/media/kiki_broom.37b2c210.gif",
-    "static/media/kodama.358bd835.png": "/Studio-Ghibli-API-React/static/media/kodama.358bd835.png",
+    "static/media/kodama_head.ac087b15.png": "/Studio-Ghibli-API-React/static/media/kodama_head.ac087b15.png",
     "static/media/logo.6f716474.svg": "/Studio-Ghibli-API-React/static/media/logo.6f716474.svg",
     "static/media/music.f64f03b4.gif": "/Studio-Ghibli-API-React/static/media/music.f64f03b4.gif",
     "static/media/noface.61cfbc15.png": "/Studio-Ghibli-API-React/static/media/noface.61cfbc15.png",
@@ -65,8 +65,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dbf869bd.js",
-    "static/js/2.ade2ac7e.chunk.js",
-    "static/css/main.ef900579.chunk.css",
-    "static/js/main.bf09fedf.chunk.js"
+    "static/js/2.199e7936.chunk.js",
+    "static/css/main.865991b6.chunk.css",
+    "static/js/main.4a96ba83.chunk.js"
   ]
 }
