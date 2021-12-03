@@ -36,7 +36,7 @@
     .hero_img {
         width: 50%;
         max-width: 230px;
-        animation: grow 1s ease-in-out 1;
+        animation: grow 1s ease-in-out 1, sway 14s linear infinite 1s;
 
         img {
             position: relative;
@@ -112,6 +112,15 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes sway {
+    15% {
+        transform: rotate(-3deg);
+    }
+    85% {
+        transform: rotate(3deg);
     }
 }
 

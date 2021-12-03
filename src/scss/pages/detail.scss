@@ -1,5 +1,5 @@
 .movie-details {
-    background: rgb(251, 255, 255);
+    background: rgb(244, 255, 255);
 }
 
 .details-wrapper {
@@ -84,7 +84,8 @@
     animation-name: animatebottom;
     animation-duration: 1s;
 
-    .kodama {
+    .body,
+    .head {
         display: none;
     }
 }
@@ -108,6 +109,7 @@
         }
         .body {
             position: absolute;
+            display: block;
             width: 3.5em;
             left: -1.5em;
             bottom: -1em;
@@ -189,7 +191,7 @@
         transform: rotate(-5deg);
     }
     75% {
-        transform: rotate(15deg);
+        transform: rotate(10deg);
     }
     100% {
         transform: rotate(0deg);

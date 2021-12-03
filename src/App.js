@@ -18,6 +18,16 @@ import {
     getLocalWatched,
     saveToLocalStorage,
 } from "./util/localStorage";
+//Font Awesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+    faFilm,
+    faHome,
+    faStar,
+    faEdit,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faFilm, faHome, faStar, faEdit);
 
 function App() {
     // find the current pathname and add it as a class to App to render the correct background

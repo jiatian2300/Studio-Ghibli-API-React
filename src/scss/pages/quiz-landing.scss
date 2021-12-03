@@ -15,7 +15,7 @@
     padding: 4em 0;
     position: relative;
     @include for-tablet-landscape-up {
-        padding: 3em 0 1em;
+        padding: 3em 0;
     }
 }
 
@@ -25,12 +25,12 @@
         display: block;
         position: absolute;
         width: 130%;
-        margin-left: -12%;
+        margin-left: -13%;
         top: 4em;
         height: 60vh;
 
         img {
-            width: 23em;
+            width: 22em;
             position: absolute;
         }
 
