@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Studio-Ghibli-API-React/static/css/main.ce187c66.chunk.css",
+    "main.css": "/Studio-Ghibli-API-React/static/css/main.eb3d4994.chunk.css",
     "main.js": "/Studio-Ghibli-API-React/static/js/main.d9cd1ed2.chunk.js",
     "main.js.map": "/Studio-Ghibli-API-React/static/js/main.d9cd1ed2.chunk.js.map",
     "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.3c182c21.js",
@@ -10,7 +10,7 @@
     "static/js/3.0165c76e.chunk.js": "/Studio-Ghibli-API-React/static/js/3.0165c76e.chunk.js",
     "static/js/3.0165c76e.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.0165c76e.chunk.js.map",
     "index.html": "/Studio-Ghibli-API-React/index.html",
-    "static/css/main.ce187c66.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.ce187c66.chunk.css.map",
+    "static/css/main.eb3d4994.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.eb3d4994.chunk.css.map",
     "static/js/2.f3040b5d.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.f3040b5d.chunk.js.LICENSE.txt",
     "static/media/Arrietty.jpg": "/Studio-Ghibli-API-React/static/media/Arrietty.e7a72fa3.jpg",
     "static/media/Castle in the Sky.jpg": "/Studio-Ghibli-API-React/static/media/Castle in the Sky.8677928b.jpg",
@@ -66,7 +66,7 @@
   "entrypoints": [
     "static/js/runtime-main.3c182c21.js",
     "static/js/2.f3040b5d.chunk.js",
-    "static/css/main.ce187c66.chunk.css",
+    "static/css/main.eb3d4994.chunk.css",
     "static/js/main.d9cd1ed2.chunk.js"
   ]
 }
