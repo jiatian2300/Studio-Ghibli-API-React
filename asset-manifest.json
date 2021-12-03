@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Studio-Ghibli-API-React/static/css/main.865991b6.chunk.css",
-    "main.js": "/Studio-Ghibli-API-React/static/js/main.4a96ba83.chunk.js",
-    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.4a96ba83.chunk.js.map",
-    "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js",
-    "runtime-main.js.map": "/Studio-Ghibli-API-React/static/js/runtime-main.dbf869bd.js.map",
-    "static/js/2.199e7936.chunk.js": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js",
-    "static/js/2.199e7936.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js.map",
-    "static/js/3.513f40fe.chunk.js": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js",
-    "static/js/3.513f40fe.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.513f40fe.chunk.js.map",
+    "main.css": "/Studio-Ghibli-API-React/static/css/main.3d89821e.chunk.css",
+    "main.js": "/Studio-Ghibli-API-React/static/js/main.a4b8353f.chunk.js",
+    "main.js.map": "/Studio-Ghibli-API-React/static/js/main.a4b8353f.chunk.js.map",
+    "runtime-main.js": "/Studio-Ghibli-API-React/static/js/runtime-main.a1c3d890.js",
+    "runtime-main.js.map": "/Studio-Ghibli-API-React/static/js/runtime-main.a1c3d890.js.map",
+    "static/js/2.5c2b3978.chunk.js": "/Studio-Ghibli-API-React/static/js/2.5c2b3978.chunk.js",
+    "static/js/2.5c2b3978.chunk.js.map": "/Studio-Ghibli-API-React/static/js/2.5c2b3978.chunk.js.map",
+    "static/js/3.99e3b614.chunk.js": "/Studio-Ghibli-API-React/static/js/3.99e3b614.chunk.js",
+    "static/js/3.99e3b614.chunk.js.map": "/Studio-Ghibli-API-React/static/js/3.99e3b614.chunk.js.map",
     "index.html": "/Studio-Ghibli-API-React/index.html",
-    "static/css/main.865991b6.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.865991b6.chunk.css.map",
-    "static/js/2.199e7936.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.199e7936.chunk.js.LICENSE.txt",
+    "static/css/main.3d89821e.chunk.css.map": "/Studio-Ghibli-API-React/static/css/main.3d89821e.chunk.css.map",
+    "static/js/2.5c2b3978.chunk.js.LICENSE.txt": "/Studio-Ghibli-API-React/static/js/2.5c2b3978.chunk.js.LICENSE.txt",
     "static/media/Arrietty.jpg": "/Studio-Ghibli-API-React/static/media/Arrietty.e7a72fa3.jpg",
     "static/media/Castle in the Sky.jpg": "/Studio-Ghibli-API-React/static/media/Castle in the Sky.8677928b.jpg",
     "static/media/From Up on Poppy Hill.jpg": "/Studio-Ghibli-API-React/static/media/From Up on Poppy Hill.a3559cd7.jpg",
@@ -64,9 +64,9 @@
     "static/media/walking.c28adbe0.gif": "/Studio-Ghibli-API-React/static/media/walking.c28adbe0.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.dbf869bd.js",
-    "static/js/2.199e7936.chunk.js",
-    "static/css/main.865991b6.chunk.css",
-    "static/js/main.4a96ba83.chunk.js"
+    "static/js/runtime-main.a1c3d890.js",
+    "static/js/2.5c2b3978.chunk.js",
+    "static/css/main.3d89821e.chunk.css",
+    "static/js/main.a4b8353f.chunk.js"
   ]
 }
