@@ -3,6 +3,8 @@ import { Redirect, Link } from "react-router-dom";
 import head from "../images/kodama_head.png";
 import body from "../images/kodama_body.png";
 import loader from "../images/music.gif";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     const [currentIndex, setCurrentIndex] = useState("");
@@ -116,79 +118,89 @@ function Details({ match, toWatch, setToWatch, watched, setWatched }) {
     }
 
     return (
-        <div className="container details-wrapper">
-            <div className={`loader ${loading ? "" : "hidden"}`}>
-                <img src={loader} alt="Loading..." />
-                Loading...
-            </div>
-            <div className={`details_wrapper ${loading ? "hidden" : ""}`}>
-                <div className="poster_wrapper">
-                    <img className="poster" src={poster.default} alt="Poster" />
+        <div>
+            <Navbar />
+            <div className="container details-wrapper">
+                <div className={`loader ${loading ? "" : "hidden"}`}>
+                    <img src={loader} alt="Loading..." />
+                    Loading...
                 </div>
-                <div className="content">
-                    <p className="movie-title">{movie.title}</p>
-                    <p className="jap-title">{movie.original_title}</p>
-                    <p className="year">({movie.release_date})</p>
-                    <p className="staff">
-                        Director: <span className="name">{movie.director}</span>
-                    </p>
-                    <p className="staff">
-                        Producer: <span className="name">{movie.producer}</span>
-                    </p>
-                    <div className="buttons">
-                        <button
-                            className={`basic_btn_dark ${
-                                watchedState ? "none" : ""
-                            }`}
-                            onClick={addToWatch}
-                        >
-                            {wantBtnState} <span>🍿</span>
-                        </button>
-                        <button
-                            className={`basic_btn_light ${
-                                watchedState ? "none" : ""
-                            }`}
-                            onClick={addWatched}
-                        >
-                            Add to Watched <span>🎬</span>
-                        </button>
-                        <p className={` ${watchedState ? "" : "none"}`}>
-                            Finshed Watching ✔️
+                <div className={`details_wrapper ${loading ? "hidden" : ""}`}>
+                    <div className="poster_wrapper">
+                        <img
+                            className="poster"
+                            src={poster.default}
+                            alt="Poster"
+                        />
+                    </div>
+                    <div className="content">
+                        <p className="movie-title">{movie.title}</p>
+                        <p className="jap-title">{movie.original_title}</p>
+                        <p className="year">({movie.release_date})</p>
+                        <p className="staff">
+                            Director:{" "}
+                            <span className="name">{movie.director}</span>
                         </p>
-                        <button
-                            className={`basic_btn_light ${
-                                watchedState ? "" : "none"
-                            }`}
-                            onClick={watchAgain}
-                        >
-                            Watch Again 💖
-                        </button>
+                        <p className="staff">
+                            Producer:{" "}
+                            <span className="name">{movie.producer}</span>
+                        </p>
+                        <div className="buttons">
+                            <button
+                                className={`basic_btn_dark ${
+                                    watchedState ? "none" : ""
+                                }`}
+                                onClick={addToWatch}
+                            >
+                                {wantBtnState} <span>🍿</span>
+                            </button>
+                            <button
+                                className={`basic_btn_light ${
+                                    watchedState ? "none" : ""
+                                }`}
+                                onClick={addWatched}
+                            >
+                                Add to Watched <span>🎬</span>
+                            </button>
+                            <p className={` ${watchedState ? "" : "none"}`}>
+                                Finshed Watching ✔️
+                            </p>
+                            <button
+                                className={`basic_btn_light ${
+                                    watchedState ? "" : "none"
+                                }`}
+                                onClick={watchAgain}
+                            >
+                                Watch Again 💖
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <div className={`description ${loading ? "hidden" : ""}`}>
+                    <img className="body" src={body} alt="kodama" />
+                    <img className="head" src={head} alt="kodama" />
+                    {movie.description}
+                </div>
+                <div className={`move_on ${loading ? "hidden" : ""}`}>
+                    <Link
+                        className={`quit_btn ${
+                            currentIndex === "first" ? "hidden" : ""
+                        }`}
+                        to={target[0]}
+                    >
+                        ← Previous
+                    </Link>
+                    <Link
+                        className={`quit_btn ${
+                            currentIndex === "last" ? "hidden" : ""
+                        }`}
+                        to={target[1]}
+                    >
+                        Next →
+                    </Link>
+                </div>
             </div>
-            <div className={`description ${loading ? "hidden" : ""}`}>
-                <img className="body" src={body} alt="kodama" />
-                <img className="head" src={head} alt="kodama" />
-                {movie.description}
-            </div>
-            <div className={`move_on ${loading ? "hidden" : ""}`}>
-                <Link
-                    className={`quit_btn ${
-                        currentIndex === "first" ? "hidden" : ""
-                    }`}
-                    to={target[0]}
-                >
-                    ← Previous Movie
-                </Link>
-                <Link
-                    className={`quit_btn ${
-                        currentIndex === "last" ? "hidden" : ""
-                    }`}
-                    to={target[1]}
-                >
-                    Next Movie →
-                </Link>
-            </div>
+            <Footer />
         </div>
     );
 }

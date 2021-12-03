@@ -80,7 +80,7 @@ async function people(items, films) {
             Question Type 2: What is this person's gender?
         =====================*/
         const gender_ans = item.gender;
-        const gender_option = Math.random() < 0.5 ? "female" : "male";
+        const gender_option = Math.random() < 0.5 ? "Female" : "Male";
 
         const question_2 = `${item.name} is a ${gender_option} character.`;
         questions.push({

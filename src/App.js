@@ -9,9 +9,6 @@ import WatchList from "./pages/watchlist";
 import Quiz from "./pages/quiz";
 import QuizLanding from "./pages/quiz-landing";
 import notFound from "./pages/notFound";
-//Components
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 //Utils
 import {
     getLocalToWatch,
@@ -53,7 +50,6 @@ function App() {
 
     return (
         <div className={`App ${location} ${quizCat}`}>
-            <Navbar />
             <Switch>
                 <Redirect from="/" exact to="/home" />
                 <Route path="/home" exact component={Home}></Route>
@@ -94,7 +90,6 @@ function App() {
                 ></Route>
                 <Route component={notFound}></Route>
             </Switch>
-            <Footer />
         </div>
     );
 }

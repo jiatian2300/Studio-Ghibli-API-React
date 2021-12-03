@@ -91,7 +91,7 @@
         content: "";
         background: $light-green;
         position: absolute;
-        height: 1000%;
+        height: calc(100% + 3.5em);
         width: 200vw;
         left: -50vw;
         top: -2.5em;
@@ -123,7 +123,7 @@
     .to-watch,
     .watched {
         margin: 3.5em 0 4.5em;
-        min-height: 14.5em;
+        min-height: 16.2em;
     }
 
     .watched {
@@ -131,7 +131,7 @@
         z-index: 1;
 
         &::after {
-            height: 120%;
+            height: 130%;
             width: 160%;
             top: -7%;
             left: -20%;
@@ -153,7 +153,7 @@
         position: absolute;
         display: block;
         width: 15em;
-        bottom: 3.5em;
+        bottom: 3.6em;
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 1;

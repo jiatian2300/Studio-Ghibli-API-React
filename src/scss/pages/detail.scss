@@ -167,6 +167,7 @@
     display: flex;
     justify-content: space-between;
     margin: 3em 0 1em;
+    gap: 1em;
 
     @include for-tablet-portrait-up {
         margin: 3em 0 0;

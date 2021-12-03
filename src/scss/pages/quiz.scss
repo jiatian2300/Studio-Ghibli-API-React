@@ -1,15 +1,20 @@
 .quiz-start {
     background: var(--background);
-    height: calc(100vh + 16.5em);
+}
 
-    @include for-tablet-portrait-up {
-        height: 100vh;
-    }
+.container {
+    width: 90%;
 }
 
 .start_screen,
-.quiz_screen {
+.quiz_screen,
+.end_screen {
     max-width: 700px;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .start_screen {
@@ -27,7 +32,6 @@
 }
 
 .end_screen {
-    display: block;
     .start,
     .quiz {
         display: none;
@@ -35,7 +39,7 @@
 }
 
 .start {
-    margin-top: 2em;
+    margin-top: 3em;
     header {
         margin: 3em auto 1.9em;
         position: relative;
@@ -47,7 +51,7 @@
         }
         .brush {
             position: absolute;
-            width: fit-content;
+            width: 100%;
             left: 50%;
             top: 0.4em;
             transform: translate(-50%, 0) scale(2);
@@ -67,6 +71,8 @@
 }
 
 .quiz {
+    width: 85%;
+
     header {
         display: flex;
         justify-content: space-between;
@@ -92,7 +98,7 @@
 
                 color: white;
                 font-family: "Londrina Solid", cursive;
-                font-size: 1.45rem;
+                font-size: 1.4rem;
                 font-weight: 300;
 
                 @include for-tablet-landscape-up {
@@ -123,11 +129,12 @@
         margin: 1em 0 1.5em;
         padding: 3em 1em;
         border-radius: 10px;
-        min-height: 135px;
+        min-height: 140px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        word-wrap: break-word;
 
         background: white;
         color: $pri-dark;

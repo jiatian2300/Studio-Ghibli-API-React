@@ -3,6 +3,8 @@ import Movie from "../components/movie";
 import bush1 from "../images/bush1.png";
 import bush2 from "../images/bush2.png";
 import loader from "../images/walking.gif";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function AllMovies() {
     const [movies, setMovies] = useState([]);
@@ -25,20 +27,24 @@ function AllMovies() {
     }, []);
 
     return (
-        <div className="container">
-            <div className={`loader ${loading ? "" : "hidden"}`}>
-                <img src={loader} alt="Loading..." />
-                Loading...
+        <div>
+            <Navbar />
+            <div className="container">
+                <div className={`loader ${loading ? "" : "hidden"}`}>
+                    <img src={loader} alt="Loading..." />
+                    Loading...
+                </div>
+                <div className={`movies_list ${loading ? "hidden" : ""}`}>
+                    {movies.map((movie) => (
+                        <Movie key={movie.id} movie={movie} />
+                    ))}
+                </div>
+                <div className="bushes">
+                    <img className="bush1" src={bush1} alt="bush" />
+                    <img className="bush2" src={bush2} alt="bush" />
+                </div>
             </div>
-            <div className={`movies_list ${loading ? "hidden" : ""}`}>
-                {movies.map((movie) => (
-                    <Movie key={movie.id} movie={movie} />
-                ))}
-            </div>
-            <div className="bushes">
-                <img className="bush1" src={bush1} alt="bush" />
-                <img className="bush2" src={bush2} alt="bush" />
-            </div>
+            <Footer />
         </div>
     );
 }

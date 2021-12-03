@@ -120,9 +120,12 @@
 .loader {
     z-index: 1;
     width: 8em;
-    height: 6em;
-    margin: 0 auto;
-    margin-bottom: 8em;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto 4em;
 }
 
 .hidden {
